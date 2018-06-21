@@ -1,0 +1,18 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal styles */
+
+center {
+  text-align: center;
+}
+
+a.navbar-brand {
+  color: #000;
+}
+
+/* typography */
+
+h2 {
+  text-align: center;
+}
