@@ -1,5 +1,4 @@
 
-alert("test");
 //Get stuff from the DOM
 
 window.onload = function () {
@@ -25,82 +24,5 @@ window.onload = function () {
   let playerSeven = document.getElementById('player-seven');
   let playerSevenText = document.getElementById('player-seven-text');
   let playerSevenMat = document.getElementById('player-Seven-player-mat');
-let invaders = false;
-
-//Set display for DOM elements
-playerOne.style.display = 'none';
-playerTwo.style.display = 'none';
-playerThree.style.display = 'none';
-playerFour.style.display = 'none';
-playerFive.style.display = 'none';
-playerSix.style.display = 'none';
-playerSeven.style.display = 'none';
-
-//Set arrays
-let factions = ["Nordic", "Saxony", "Polania", "Crimea", "Rusviet"];
-if (invaders) {
-  factions.push("Albion");
-  factions.push("Togawa");
-}
-randomizeArray(factions);
-let playerMats = ["Mechanical", "Patriotic", "Agricultural", "Industrial", "Engineering"];
-randomizeArray(playerMats);
-let players = [];
-
-//Set functions
-function addPlayer(){
-  let newPlayer = {
-    playerNumber: players.length + 1,
-    faction: factions.pop(),
-    mat: playerMats.pop()
-  };
-  players.push(newPlayer);
-}
-
-function randomizeArray(array) {
-  for (let i = 0; i < array.length; i++ ) {
-    let swapIdx = Math.trunc(Math.random() * array.length);
-    let tmp = array[swapIdx];
-    array[swapIdx] = array[i];
-    array[i] = tmp;
-  }
-}
-
-//Button event listeners
-addPlayerButton.addEventListener('click', function() {
-  switch (players.length + 1) {
-    case 1:
-      addPlayer();
-      playerOne.style.display = "block";
-      playerOneText.innerText = "You're the " + players[0].faction + " faction!";
-      playerOneMat.innerText = "You get the " + players[0].mat + " player mat!";
-      break;
-    case 2:
-      addPlayer();
-      playerTwo.style.display = "block";
-      playerTwoText.innerText = "You're the " + players[1].faction + " faction!";
-      playerTwoMat.innerText = "You get the " + players[1].mat + " player mat!";
-      break;
-    case 3:
-      addPlayer();
-      playerThree.style.display = "block";
-      playerThreeText.innerText = "You're the " + players[2].faction + " faction!";
-      playerThreeMat.innerText = "You get the " + players[2].mat + " player mat!";
-      break;
-    case 4:
-      addPlayer();
-      playerFour.style.display = "block";
-      playerFourText.innerText = "You're the " + players[3].faction + " faction!";
-      playerFourMat.innerText = "You get the " + players[3].mat + " player mat!";
-      break;
-    case 5:
-      addPlayer();
-      playerFive.style.display = "block";
-      playerFiveText.innerText = "You're the " + players[4].faction + " faction!";
-      playerFiveMat.innerText = "You get the " + players[4].mat + " player mat!";
-      addPlayerButton.style.display = 'none';
-      break;
-  }
-  console.log(players);
-});
+  let invaders = false;
 };
