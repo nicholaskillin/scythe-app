@@ -37,15 +37,15 @@ playerSix.style.display = 'none';
 playerSeven.style.display = 'none';
 
 //Set arrays
-factions = ["Nordic", "Saxony", "Polania", "Crimea", "Rusviet"];
+let factions = ["Nordic", "Saxony", "Polania", "Crimea", "Rusviet"];
 if (invaders) {
   factions.push("Albion");
   factions.push("Togawa");
 }
 randomizeArray(factions);
-playerMats = ["Mechanical", "Patriotic", "Agricultural", "Industrial", "Engineering"];
+let playerMats = ["Mechanical", "Patriotic", "Agricultural", "Industrial", "Engineering"];
 randomizeArray(playerMats);
-players = [];
+let players = [];
 
 //Set functions
 function addPlayer(){
