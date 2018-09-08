@@ -1,4 +1,4 @@
 
 window.onload = function () {
-  alert('Hello');
+  let addPlayerButton = document.getElementById('add-player-button');
 };
