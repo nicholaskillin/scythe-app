@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
   var addPlayerButton = $('add-player-button');
   console.log(addPlayerButton);
