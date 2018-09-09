@@ -1306,7 +1306,6 @@ return this.lastRenderedLocation=this.location,this.notifyApplicationAfterPageLo
 
 }).call(this);
 
-alert("test");
 //Get stuff from the DOM
 
 window.onload = function () {
