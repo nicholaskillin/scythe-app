@@ -1306,42 +1306,42 @@ return this.lastRenderedLocation=this.location,this.notifyApplicationAfterPageLo
 
 }).call(this);
 
+
 //Get stuff from the DOM
 
 window.onload = function () {
   let addPlayerButton = document.getElementById('add-player-button');
-  let startGameButton = document.getElementById("start-game-button");
+  let startGameButton = document.getElementById('start-game-button');
+  let gameStartedDivOne = document.getElementById('game-started-1');
   let playerOne = document.getElementById('player-one');
   let playerOneText = document.getElementById('player-one-text');
   let playerOneMat = document.getElementById('player-one-player-mat');
+  let gameStartedDivTwo = document.getElementById('game-started-2');
   let playerTwo = document.getElementById('player-two');
   let playerTwoText = document.getElementById('player-two-text');
   let playerTwoMat = document.getElementById('player-two-player-mat');
+  let gameStartedDivThree = document.getElementById('game-started-3');
   let playerThree = document.getElementById('player-three');
   let playerThreeText = document.getElementById('player-three-text');
   let playerThreeMat = document.getElementById('player-three-player-mat');
+  let gameStartedDivFour = document.getElementById('game-started-4');
   let playerFour = document.getElementById('player-four');
   let playerFourText = document.getElementById('player-four-text');
   let playerFourMat = document.getElementById('player-four-player-mat');
+  let gameStartedDivFive = document.getElementById('game-started-5');
   let playerFive = document.getElementById('player-five');
   let playerFiveText = document.getElementById('player-five-text');
   let playerFiveMat = document.getElementById('player-five-player-mat');
+  let gameStartedDivSix = document.getElementById('game-started-6');
   let playerSix = document.getElementById('player-six');
   let playerSixText = document.getElementById('player-six-text');
   let playerSixMat = document.getElementById('player-six-player-mat');
+  let gameStartedDivSeven = document.getElementById('game-started-7');
   let playerSeven = document.getElementById('player-seven');
   let playerSevenText = document.getElementById('player-seven-text');
   let playerSevenMat = document.getElementById('player-Seven-player-mat');
-let invaders = false;
-
-//Set display for DOM elements
-playerOne.style.display = 'none';
-playerTwo.style.display = 'none';
-playerThree.style.display = 'none';
-playerFour.style.display = 'none';
-playerFive.style.display = 'none';
-playerSix.style.display = 'none';
-playerSeven.style.display = 'none';
+  let invaders = false;
+  let gameStarted = false
 
 //Set arrays
 let factions = ["Nordic", "Saxony", "Polania", "Crimea", "Rusviet"];
@@ -1379,38 +1379,51 @@ addPlayerButton.addEventListener('click', function() {
     case 1:
       addPlayer();
       playerOne.style.display = "block";
-      playerOneText.innerText = "You're the " + players[0].faction + " faction!";
-      playerOneMat.innerText = "You get the " + players[0].mat + " player mat!";
+      playerOneText.innerText = "Faction: " + players[0].faction;
+      playerOneMat.innerText = "Player mat: " + players[0].mat;
       break;
     case 2:
       addPlayer();
       playerTwo.style.display = "block";
+      playerTwoText.innerText = "Faction: " + players[1].faction;
+      playerTwoMat.innerText = "Player mat: " + players[1].mat;
       startGameButton.style.display = "inline";
-      playerTwoText.innerText = "You're the " + players[1].faction + " faction!";
-      playerTwoMat.innerText = "You get the " + players[1].mat + " player mat!";
       break;
     case 3:
       addPlayer();
       playerThree.style.display = "block";
-      playerThreeText.innerText = "You're the " + players[2].faction + " faction!";
-      playerThreeMat.innerText = "You get the " + players[2].mat + " player mat!";
+      playerThreeText.innerText = "Faction: " + players[2].faction;
+      playerThreeMat.innerText = "Player mat: " + players[2].mat;
       break;
     case 4:
       addPlayer();
       playerFour.style.display = "block";
-      playerFourText.innerText = "You're the " + players[3].faction + " faction!";
-      playerFourMat.innerText = "You get the " + players[3].mat + " player mat!";
+      playerFourText.innerText = "Faction: " + players[3].faction;
+      playerFourMat.innerText = "Player mat: " + players[3].mat;
       break;
     case 5:
       addPlayer();
       playerFive.style.display = "block";
-      playerFiveText.innerText = "You're the " + players[4].faction + " faction!";
-      playerFiveMat.innerText = "You get the " + players[4].mat + " player mat!";
+      playerFiveText.innerText = "Faction: " + players[4].faction;
+      playerFiveMat.innerText = "Player mat: " + players[4].mat;
       addPlayerButton.style.display = 'none';
       break;
   }
   console.log(players);
 });
+
+startGameButton.addEventListener('click', function() {
+  gameStarted = true;
+  console.log("Game Started!");
+  gameStartedDivOne.style.display = "block";
+  gameStartedDivTwo.style.display = "block";
+  gameStartedDivThree.style.display = "block";
+  gameStartedDivFour.style.display = "block";
+  gameStartedDivFive.style.display = "block";
+  gameStartedDivSix.style.display = "block";
+  gameStartedDivSeven.style.display = "block";
+});
+
 };
 (function() {
 
