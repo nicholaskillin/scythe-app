@@ -7,12 +7,27 @@ center {
   text-align: center;
 }
 
-a.navbar-brand {
-  color: #000;
-}
+// navbar
+
 
 /* typography */
 
 h2 {
   text-align: center;
+}
+
+/* player area */
+.player {
+  text-align: center;
+  max-width: 400px;
+  display: none;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+}
+
+.game-started {
+  display: none;
 }
