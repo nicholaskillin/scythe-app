@@ -8779,21 +8779,36 @@ button.close {
     display: none !important;
   }
 }
+
 /* universal styles */
-/* line 6, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+
 center {
   text-align: center;
 }
 
-/* line 10, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
-a.navbar-brand {
-  color: #000;
-}
+/* navbar */
+
 
 /* typography */
-/* line 16, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+
 h2 {
   text-align: center;
+}
+
+/* player area */
+.player {
+  text-align: center;
+  max-width: 400px;
+  display: none;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+}
+
+.game-started {
+  display: none;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
