@@ -3,6 +3,7 @@
 
 window.onload = function () {
   let addPlayerButton = document.getElementById('add-player-button');
+  let startGameButton = document.getElementById('start-game-button');
   let playerOne = document.getElementById('player-one');
   let playerOneText = document.getElementById('player-one-text');
   let playerOneMat = document.getElementById('player-one-player-mat');
@@ -79,6 +80,7 @@ addPlayerButton.addEventListener('click', function() {
       playerTwo.style.display = "block";
       playerTwoText.innerText = "You're the " + players[1].faction + " faction!";
       playerTwoMat.innerText = "You get the " + players[1].mat + " player mat!";
+      startGameButton.style.display = "inline";
       break;
     case 3:
       addPlayer();
