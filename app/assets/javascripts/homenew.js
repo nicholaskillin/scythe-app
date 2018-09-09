@@ -1,4 +1,5 @@
 
+alert('It worked!');
 //Get stuff from the DOM
 
 window.onload = function () {
