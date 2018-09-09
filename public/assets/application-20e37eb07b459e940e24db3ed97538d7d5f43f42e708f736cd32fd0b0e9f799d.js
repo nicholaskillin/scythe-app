@@ -1310,6 +1310,7 @@ return this.lastRenderedLocation=this.location,this.notifyApplicationAfterPageLo
 
 window.onload = function () {
   let addPlayerButton = document.getElementById('add-player-button');
+  let startGameButton = document.getElementById("start-game-button");
   let playerOne = document.getElementById('player-one');
   let playerOneText = document.getElementById('player-one-text');
   let playerOneMat = document.getElementById('player-one-player-mat');
@@ -1384,6 +1385,7 @@ addPlayerButton.addEventListener('click', function() {
     case 2:
       addPlayer();
       playerTwo.style.display = "block";
+      startGameButton.style.display = "inline";
       playerTwoText.innerText = "You're the " + players[1].faction + " faction!";
       playerTwoMat.innerText = "You get the " + players[1].mat + " player mat!";
       break;
