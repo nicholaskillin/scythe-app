@@ -8,10 +8,12 @@ window.onload = function () {
   let playerOne = document.getElementById('player-one');
   let playerOneText = document.getElementById('player-one-text');
   let playerOneMat = document.getElementById('player-one-player-mat');
+  let playerOnePopButton = document.getElementById('player-one-pop-button');
   let gameStartedDivTwo = document.getElementById('game-started-2');
   let playerTwo = document.getElementById('player-two');
   let playerTwoText = document.getElementById('player-two-text');
   let playerTwoMat = document.getElementById('player-two-player-mat');
+  let playerTwoPopButton = document.getElementById('player-two-pop-button');
   let gameStartedDivThree = document.getElementById('game-started-3');
   let playerThree = document.getElementById('player-three');
   let playerThreeText = document.getElementById('player-three-text');
@@ -51,7 +53,8 @@ function addPlayer(){
   let newPlayer = {
     playerNumber: players.length + 1,
     faction: factions.pop(),
-    mat: playerMats.pop()
+    mat: playerMats.pop(),
+    popularity: 0
   };
   players.push(newPlayer);
 }
@@ -114,6 +117,18 @@ startGameButton.addEventListener('click', function() {
   gameStartedDivFive.style.display = "block";
   gameStartedDivSix.style.display = "block";
   gameStartedDivSeven.style.display = "block";
+});
+
+playerOnePopButton.addEventListener('click', function() {
+  let playerOneNewPop = document.getElementById('player-one-pop').value;
+  players[0].popularity = playerOneNewPop;
+  console.log(players);
+});
+
+playerTwoPopButton.addEventListener('click', function() {
+  let playerTwoNewPop = document.getElementById('player-two-pop').value;
+  players[1].popularity = playerTwoNewPop;
+  console.log(players);
 });
 
 };
