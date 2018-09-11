@@ -15,31 +15,37 @@ window.onload = function () {
   let playerTwoText = document.getElementById('player-two-text');
   let playerTwoMat = document.getElementById('player-two-player-mat');
   let playerTwoPop = document.getElementById('player-two-pop');
+  let playerTwoStars = document.getElementById('player-two-stars');
   let gameStartedDivThree = document.getElementById('game-started-3');
   let playerThree = document.getElementById('player-three');
   let playerThreeText = document.getElementById('player-three-text');
   let playerThreeMat = document.getElementById('player-three-player-mat');
   let playerThreePop = document.getElementById('player-three-pop');
+  let playerThreeStars = document.getElementById('player-three-stars');
   let gameStartedDivFour = document.getElementById('game-started-4');
   let playerFour = document.getElementById('player-four');
   let playerFourText = document.getElementById('player-four-text');
   let playerFourMat = document.getElementById('player-four-player-mat');
   let playerFourPop = document.getElementById('player-four-pop');
+  let playerFourStars = document.getElementById('player-four-stars');
   let gameStartedDivFive = document.getElementById('game-started-5');
   let playerFive = document.getElementById('player-five');
   let playerFiveText = document.getElementById('player-five-text');
   let playerFiveMat = document.getElementById('player-five-player-mat');
   let playerFivePop = document.getElementById('player-five-pop');
+  let playerFiveStars = document.getElementById('player-five-stars');
   let gameStartedDivSix = document.getElementById('game-started-6');
   let playerSix = document.getElementById('player-six');
   let playerSixText = document.getElementById('player-six-text');
   let playerSixMat = document.getElementById('player-six-player-mat');
   let playerSixPop = document.getElementById('player-six-pop');
+  let playerSixStars = document.getElementById('player-six-stars');
   let gameStartedDivSeven = document.getElementById('game-started-7');
   let playerSeven = document.getElementById('player-seven');
   let playerSevenText = document.getElementById('player-seven-text');
   let playerSevenMat = document.getElementById('player-Seven-player-mat');
   let playerSevenPop = document.getElementById('player-seven-pop');
+  let playerSevenStars = document.getElementById('player-seven-stars');
   let invaders = false;
   let gameStarted = false
 
@@ -175,8 +181,103 @@ playerSevenPop.addEventListener('input', function() {
 playerOneStars.addEventListener('input', function() {
   let newPlayerStars = document.getElementById('player-one-stars').value;
   players[0].stars = newPlayerStars;
-  let playerStarsScore = players[0].stars * players[0].popularity;
-  let playerStarsScoreDiv = document.getElementById('player-one-stars-score');
+  if (players[0].popularity <= 5) {
+    var playerStarsScore = players[0].stars;
+  } else if (players[0].popularity >=10) {
+    var playerStarsScore = players[0].stars * 3;
+  } else {
+    var playerStarsScore = players[0].stars * 2;
+  }
+  let playerStarsScoreDiv = document.getElementById("player-one-stars-score");
+  playerStarsScoreDiv.innerHTML = playerStarsScore;
+});
+
+playerTwoStars.addEventListener('input', function() {
+  let newPlayerStars = document.getElementById('player-two-stars').value;
+  players[1].stars = newPlayerStars;
+  if (players[1].popularity <= 5) {
+    var playerStarsScore = players[1].stars;
+  } else if (players[1].popularity >=10) {
+    var playerStarsScore = players[1].stars * 3;
+  } else {
+    var playerStarsScore = players[1].stars * 2;
+  }
+  let playerStarsScoreDiv = document.getElementById('player-two-stars-score');
+  playerStarsScoreDiv.innerHTML = playerStarsScore;
+  console.log(players);
+});
+
+playerThreeStars.addEventListener('input', function() {
+  let newPlayerStars = document.getElementById('player-three-stars').value;
+  players[2].stars = newPlayerStars;
+  if (players[2].popularity <= 5) {
+    var playerStarsScore = players[2].stars;
+  } else if (players[2].popularity >=10) {
+    var playerStarsScore = players[2].stars * 3;
+  } else {
+    var playerStarsScore = players[2].stars * 2;
+  }
+  let playerStarsScoreDiv = document.getElementById('player-three-stars-score');
+  playerStarsScoreDiv.innerHTML = playerStarsScore;
+  console.log(players);
+});
+
+playerFourStars.addEventListener('input', function() {
+  let newPlayerStars = document.getElementById('player-four-stars').value;
+  players[3].stars = newPlayerStars;
+  if (players[3].popularity <= 5) {
+    var playerStarsScore = players[3].stars;
+  } else if (players[3].popularity >=10) {
+    var playerStarsScore = players[3].stars * 3;
+  } else {
+    var playerStarsScore = players[3].stars * 2;
+  }
+  let playerStarsScoreDiv = document.getElementById('player-four-stars-score');
+  playerStarsScoreDiv.innerHTML = playerStarsScore;
+  console.log(players);
+});
+
+playerFiveStars.addEventListener('input', function() {
+  let newPlayerStars = document.getElementById('player-five-stars').value;
+  players[4].stars = newPlayerStars;
+  if (players[4].popularity <= 5) {
+    var playerStarsScore = players[4].stars;
+  } else if (players[4].popularity >=10) {
+    var playerStarsScore = players[4].stars * 3;
+  } else {
+    var playerStarsScore = players[4].stars * 2;
+  }
+  let playerStarsScoreDiv = document.getElementById('player-five-stars-score');
+  playerStarsScoreDiv.innerHTML = playerStarsScore;
+  console.log(players);
+});
+
+playerSixStars.addEventListener('input', function() {
+  let newPlayerStars = document.getElementById('player-six-stars').value;
+  players[5].stars = newPlayerStars;
+  if (players[5].popularity <= 5) {
+    var playerStarsScore = players[5].stars;
+  } else if (players[5].popularity >=10) {
+    var playerStarsScore = players[5].stars * 3;
+  } else {
+    var playerStarsScore = players[5].stars * 2;
+  }
+  let playerStarsScoreDiv = document.getElementById('player-six-stars-score');
+  playerStarsScoreDiv.innerHTML = playerStarsScore;
+  console.log(players);
+});
+
+playerSevenStars.addEventListener('input', function() {
+  let newPlayerStars = document.getElementById('player-seven-stars').value;
+  players[6].stars = newPlayerStars;
+  if (players[6].popularity <= 5) {
+    var playerStarsScore = players[6].stars;
+  } else if (players[6].popularity >=10) {
+    var playerStarsScore = players[6].stars * 3;
+  } else {
+    var playerStarsScore = players[6].stars * 2;
+  }
+  let playerStarsScoreDiv = document.getElementById('player-seven-stars-score');
   playerStarsScoreDiv.innerHTML = playerStarsScore;
   console.log(players);
 });
