@@ -12,6 +12,7 @@ window.onload = function () {
   let structureBonus = "none";
   
 //Get player one elements
+  let playerOneName = document.getElementById("player-1-name");
   let gameStartedDivOne = document.getElementById('game-started-1');
   let playerOne = document.getElementById('player-one');
   let playerOneText = document.getElementById('player-one-text');
@@ -24,6 +25,7 @@ window.onload = function () {
   let playerOneStrucBonus = document.getElementById("player-one-strucBonus");
   
 //Get player two elements
+  let playerTwoName = document.getElementById("player-2-name");
   let gameStartedDivTwo = document.getElementById('game-started-2');
   let playerTwo = document.getElementById('player-two');
   let playerTwoText = document.getElementById('player-two-text');
@@ -36,6 +38,7 @@ window.onload = function () {
   let playerTwoStrucBonus = document.getElementById("player-two-strucBonus");
   
 //Get player three elements
+  let playerThreeName = document.getElementById("player-3-name");
   let gameStartedDivThree = document.getElementById('game-started-3');
   let playerThree = document.getElementById('player-three');
   let playerThreeText = document.getElementById('player-three-text');
@@ -48,6 +51,7 @@ window.onload = function () {
   let playerThreeStrucBonus = document.getElementById("player-three-strucBonus");
   
 //Get player four elements
+  let playerFourName = document.getElementById("player-4-name");
   let gameStartedDivFour = document.getElementById('game-started-4');
   let playerFour = document.getElementById('player-four');
   let playerFourText = document.getElementById('player-four-text');
@@ -60,6 +64,7 @@ window.onload = function () {
   let playerFourStrucBonus = document.getElementById("player-four-strucBonus");
   
 //Get player five elements
+  let playerFiveName = document.getElementById("player-5-name");
   let gameStartedDivFive = document.getElementById('game-started-5');
   let playerFive = document.getElementById('player-five');
   let playerFiveText = document.getElementById('player-five-text');
@@ -72,6 +77,7 @@ window.onload = function () {
   let playerFiveStrucBonus = document.getElementById("player-five-strucBonus");
   
 //Get player six elements
+  let playerSixName = document.getElementById("player-6-name");
   let gameStartedDivSix = document.getElementById('game-started-6');
   let playerSix = document.getElementById('player-six');
   let playerSixText = document.getElementById('player-six-text');
@@ -84,6 +90,7 @@ window.onload = function () {
   let playerSixStrucBonus = document.getElementById("player-six-strucBonus");
   
 //Get player seven elements
+  let playerSevenName = document.getElementById("player-7-name");
   let gameStartedDivSeven = document.getElementById('game-started-7');
   let playerSeven = document.getElementById('player-seven');
   let playerSevenText = document.getElementById('player-seven-text');
@@ -108,7 +115,9 @@ let players = [];
 
 //Set functions
 function addPlayer(){
+  var personName = prompt("Please enter your name", "Name Here");
   let newPlayer = {
+    name: personName,
     playerNumber: players.length + 1,
     faction: factions.pop(),
     mat: playerMats.pop(),
@@ -346,12 +355,14 @@ addPlayerButton.addEventListener('click', function() {
   switch (players.length + 1) {
     case 1:
       addPlayer();
+      playerOneName.innerHTML = players[0].name;
       playerOne.style.display = "block";
       playerOneText.innerText = "Faction: " + players[0].faction;
       playerOneMat.innerText = "Player mat: " + players[0].mat;
       break;
     case 2:
       addPlayer();
+      playerTwoName.innerHTML = players[1].name;
       playerTwo.style.display = "block";
       playerTwoText.innerText = "Faction: " + players[1].faction;
       playerTwoMat.innerText = "Player mat: " + players[1].mat;
@@ -359,18 +370,21 @@ addPlayerButton.addEventListener('click', function() {
       break;
     case 3:
       addPlayer();
+      playerThreeName.innerHTML = players[2].name;
       playerThree.style.display = "block";
       playerThreeText.innerText = "Faction: " + players[2].faction;
       playerThreeMat.innerText = "Player mat: " + players[2].mat;
       break;
     case 4:
       addPlayer();
+      playerFourName.innerHTML = players[3].name;
       playerFour.style.display = "block";
       playerFourText.innerText = "Faction: " + players[3].faction;
       playerFourMat.innerText = "Player mat: " + players[3].mat;
       break;
     case 5:
       addPlayer();
+      playerFiveName.innerHTML = players[4].name;
       playerFive.style.display = "block";
       playerFiveText.innerText = "Faction: " + players[4].faction;
       playerFiveMat.innerText = "Player mat: " + players[4].mat;
