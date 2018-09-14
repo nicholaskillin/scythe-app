@@ -1,6 +1,15 @@
 <header>
     <navbar class="navbar navbar-expand-lg navbar-dark bg-dark">
       <%= link_to "Scythe Score Keeper", '#', class: "navbar-brand mr-auto" %>
+      <select id="strucBonus-dropdown">
+        <option value="none">Select a Bonus Structure Card</option>
+        <option value="Tunnels Adjacent">Tunnels Adjacent</option>
+        <option value="Lakes">Lakes</option>
+        <option value="Encounters">Encounters</option>
+        <option value="Structure on Tunnel">Structure on Tunnel</option>
+        <option value="Structures in a Row">Structures in a Row</option>
+        <option value="Structures on Farms or Tundra">Structures on Farms or Tundra</option>
+      </select>
       <button class="btn btn-primary mx-2" style="inline; display: none;" id="start-game-button">Start Your Game</button>
       <button class="btn btn-primary mx-2" style="inline;" id="add-player-button">Add a player</button>
     </navbar>

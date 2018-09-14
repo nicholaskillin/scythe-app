@@ -6,8 +6,10 @@ window.onload = function () {
   //Get non-player elements
   let addPlayerButton = document.getElementById('add-player-button');
   let startGameButton = document.getElementById('start-game-button');
+  let structureBonusCard = document.getElementById("strucBonus-dropdown");
   let invaders = false;
   let gameStarted = false
+  let structureBonus = "none";
   
 //Get player one elements
   let gameStartedDivOne = document.getElementById('game-started-1');
@@ -178,6 +180,94 @@ function updateResources(player) {
   calculateTotalScore(player);
 }
 
+function updateStructureBonus(player, structureBonus, numberOfStructures) {
+  player.structureBonusPoints = numberOfStructures;
+  switch (structureBonus) {
+    case "none":
+      alert("Please select a structure bonus.");
+      break;
+    case "Tunnels Adjacent":
+      if (player.structureBonusPoints === "0") {
+        var structureBonusScore = 0;
+      } else if (player.structureBonusPoints === "1") {
+        structureBonusScore = 2;
+      } else if (player.structureBonusPoints === "2" || player.structureBonusPoints === "3") {
+        structureBonusScore = 4;
+      } else if (player.structureBonusPoints === "4" || player.structureBonusPoints === "5") {
+        structureBonusScore = 6;
+      } else if (player.structureBonusPoints === "6") {
+        structureBonusScore = 9;
+      }
+      break;
+    case "Lakes":
+      if (player.structureBonusPoints === "0") {
+        structureBonusScore = 0;
+      } else if (player.structureBonusPoints === "1") {
+        structureBonusScore = 2;
+      } else if (player.structureBonusPoints === "2" || player.structureBonusPoints === "3") {
+        structureBonusScore = 4;
+      } else if (player.structureBonusPoints === "4" || player.structureBonusPoints === "5") {
+        structureBonusScore = 6;
+      } else if (player.structureBonusPoints === "6" || player.structureBonusPoints === "7") {
+        structureBonusScore = 9;
+      }
+      break;
+    case "Encounters":
+      if (player.structureBonusPoints === "0") {
+        structureBonusScore = 0;
+      } else if (player.structureBonusPoints === "1") {
+        structureBonusScore = 2;
+      } else if (player.structureBonusPoints === "2" || player.structureBonusPoints === "3") {
+        structureBonusScore = 4;
+      } else if (player.structureBonusPoints === "4" || player.structureBonusPoints === "5") {
+        structureBonusScore = 6;
+      } else if (player.structureBonusPoints === "6" || player.structureBonusPoints === "7") {
+        structureBonusScore = 9;
+      }
+      break;
+    case "Structure on Tunnel":
+      if (player.structureBonusPoints === "0") {
+        structureBonusScore = 0;
+      } else if (player.structureBonusPoints === "1") {
+        structureBonusScore = 2;
+      } else if (player.structureBonusPoints === "2") {
+        structureBonusScore = 4;
+      } else if (player.structureBonusPoints === "3" || player.structureBonusPoints === "4") {
+        structureBonusScore = 6;
+      } 
+      break;
+    case "Structures in a Row":
+      if (player.structureBonusPoints === "0") {
+        structureBonusScore = 0;
+      } else if (player.structureBonusPoints === "1") {
+        structureBonusScore = 2;
+      } else if (player.structureBonusPoints === "2") {
+        structureBonusScore = 4;
+      } else if (player.structureBonusPoints === "3") {
+        structureBonusScore = 6;
+      } else if (player.structureBonusPoints === "4") {
+        structureBonusScore = 9;
+      }
+      break;
+    case "Structures on Farms or Tundra":
+      if (player.structureBonusPoints === "0") {
+        structureBonusScore = 0;
+      } else if (player.structureBonusPoints === "1") {
+        structureBonusScore = 2;
+      } else if (player.structureBonusPoints === "2") {
+        structureBonusScore = 4;
+      } else if (player.structureBonusPoints === "3") {
+        structureBonusScore = 6;
+      } else if (player.structureBonusPoints === "4") {
+        structureBonusScore = 9;
+      }
+      break;
+  }
+  let playerStrucBonusDiv = document.getElementById("player-" + player.playerNumber + "-strucBonus-score");
+  playerStrucBonusDiv.innerHTML = structureBonusScore;
+  calculateTotalScore(player);
+}
+
 function calculateTotalScore(player) {
   //Get Stars Score
   var starsScore = Number(document.getElementById("player-" + player.playerNumber + "-stars-score").innerHTML);
@@ -192,6 +282,66 @@ function calculateTotalScore(player) {
 }
 
 //Button event listeners
+structureBonusCard.addEventListener('change', function() {
+  structureBonus = structureBonusCard.value;
+  switch (structureBonusCard.value) {
+    case "Tunnels Adjacent":
+      playerOneStrucBonus.max = "6";
+      playerTwoStrucBonus.max = "6";
+      playerThreeStrucBonus.max = "6";
+      playerFourStrucBonus.max = "6";
+      playerFiveStrucBonus.max = "6";
+      playerSixStrucBonus.max = "6";
+      playerSevenStrucBonus.max = "6";
+      break;
+    case "Lakes":
+       playerOneStrucBonus.max = "7";
+       playerTwoStrucBonus.max = "7";
+       playerThreeStrucBonus.max = "7";
+       playerFourStrucBonus.max = "7";
+       playerFiveStrucBonus.max = "7";
+       playerSixStrucBonus.max = "7";
+       playerSevenStrucBonus.max = "7";
+      break;
+    case "Encounters":
+       playerOneStrucBonus.max = "7";
+       playerTwoStrucBonus.max = "7";
+       playerThreeStrucBonus.max = "7";
+       playerFourStrucBonus.max = "7";
+       playerFiveStrucBonus.max = "7";
+       playerSixStrucBonus.max = "7";
+       playerSevenStrucBonus.max = "7";
+      break;
+    case "Structure on Tunnel":
+       playerOneStrucBonus.max = "4";
+       playerTwoStrucBonus.max = "4";
+       playerThreeStrucBonus.max = "4";
+       playerFourStrucBonus.max = "4";
+       playerFiveStrucBonus.max = "4";
+       playerSixStrucBonus.max = "4";
+       playerSevenStrucBonus.max = "4";
+      break;
+    case "Structures in a Row":
+       playerOneStrucBonus.max = "4";
+       playerTwoStrucBonus.max = "4";
+       playerThreeStrucBonus.max = "4";
+       playerFourStrucBonus.max = "4";
+       playerFiveStrucBonus.max = "4";
+       playerSixStrucBonus.max = "4";
+       playerSevenStrucBonus.max = "4";
+      break;
+    case "Structures on Farms or Tundra":
+       playerOneStrucBonus.max = "4";
+       playerTwoStrucBonus.max = "4";
+       playerThreeStrucBonus.max = "4";
+       playerFourStrucBonus.max = "4";
+       playerFiveStrucBonus.max = "4";
+       playerSixStrucBonus.max = "4";
+       playerSevenStrucBonus.max = "4";
+      break;
+  }
+});
+
 addPlayerButton.addEventListener('click', function() {
   switch (players.length + 1) {
     case 1:
@@ -463,10 +613,38 @@ playerSevenMoney.addEventListener('input', function() {
 //Update Player Structure Bonus
 
 playerOneStrucBonus.addEventListener('input', function() {
-  let newPlayerStrucBonus = playerOneStrucBonus.value;
-  players[0].structureBonusPoints = newPlayerStrucBonus;
-  let playerStrucBonusDiv = document.getElementById("player-one-strucBonus-score");
-  playerStrucBonusDiv.innerHTML = newPlayerStrucBonus;
+  let numberOfStructures = playerOneStrucBonus.value; 
+  updateStructureBonus(players[0], structureBonus, numberOfStructures);
+});
+
+playerTwoStrucBonus.addEventListener('input', function() {
+  let numberOfStructures = playerTwoStrucBonus.value; 
+  updateStructureBonus(players[1], structureBonus, numberOfStructures);
+});
+
+playerThreeStrucBonus.addEventListener('input', function() {
+  let numberOfStructures = playerThreeStrucBonus.value; 
+  updateStructureBonus(players[2], structureBonus, numberOfStructures);
+});
+
+playerFourStrucBonus.addEventListener('input', function() {
+  let numberOfStructures = playerFourStrucBonus.value; 
+  updateStructureBonus(players[3], structureBonus, numberOfStructures);
+});
+
+playerFiveStrucBonus.addEventListener('input', function() {
+  let numberOfStructures = playerFiveStrucBonus.value; 
+  updateStructureBonus(players[4], structureBonus, numberOfStructures);
+});
+
+playerSixStrucBonus.addEventListener('input', function() {
+  let numberOfStructures = playerSixStrucBonus.value; 
+  updateStructureBonus(players[5], structureBonus, numberOfStructures);
+});
+
+playerSevenStrucBonus.addEventListener('input', function() {
+  let numberOfStructures = playerSevenStrucBonus.value; 
+  updateStructureBonus(players[6], structureBonus, numberOfStructures);
 });
 
 };
