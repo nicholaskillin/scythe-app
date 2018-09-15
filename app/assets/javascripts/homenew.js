@@ -4,21 +4,21 @@
 window.onload = function () {
   
   //Get non-player elements
-  let addPlayerButton = document.getElementById('add-player-button');
-  let startGameButton = document.getElementById('start-game-button');
+  let addPlayerButton = document.getElementById("add-player-button");
+  let startGameButton = document.getElementById("start-game-button");
   let structureBonusCard = document.getElementById("strucBonus-dropdown");
   let invaders = false;
-  let gameStarted = false
+  let gameStarted = false;
   let structureBonus = "none";
   
 //Get player one elements
   let playerOneName = document.getElementById("player-1-name");
-  let gameStartedDivOne = document.getElementById('game-started-1');
-  let playerOne = document.getElementById('player-one');
-  let playerOneText = document.getElementById('player-one-text');
-  let playerOneMat = document.getElementById('player-one-player-mat');
-  let playerOnePop = document.getElementById('player-1-pop');
-  let playerOneStars = document.getElementById('player-one-stars');
+  let gameStartedDivOne = document.getElementById("game-started-1");
+  let playerOne = document.getElementById("player-one");
+  let playerOneText = document.getElementById("player-one-text");
+  let playerOneMat = document.getElementById("player-one-player-mat");
+  let playerOnePop = document.getElementById("player-1-pop");
+  let playerOneStars = document.getElementById("player-one-stars");
   let playerOneTerritories = document.getElementById("player-one-territory");
   let playerOneResources = document.getElementById("player-one-resources");
   let playerOneMoney = document.getElementById("player-one-money");
@@ -26,12 +26,12 @@ window.onload = function () {
   
 //Get player two elements
   let playerTwoName = document.getElementById("player-2-name");
-  let gameStartedDivTwo = document.getElementById('game-started-2');
-  let playerTwo = document.getElementById('player-two');
-  let playerTwoText = document.getElementById('player-two-text');
-  let playerTwoMat = document.getElementById('player-two-player-mat');
-  let playerTwoPop = document.getElementById('player-2-pop');
-  let playerTwoStars = document.getElementById('player-two-stars');
+  let gameStartedDivTwo = document.getElementById("game-started-2");
+  let playerTwo = document.getElementById("player-two");
+  let playerTwoText = document.getElementById("player-two-text");
+  let playerTwoMat = document.getElementById("player-two-player-mat");
+  let playerTwoPop = document.getElementById("player-2-pop");
+  let playerTwoStars = document.getElementById("player-two-stars");
   let playerTwoTerritories = document.getElementById("player-two-territory");
   let playerTwoResources = document.getElementById("player-two-resources");
   let playerTwoMoney = document.getElementById("player-two-money");
@@ -39,12 +39,12 @@ window.onload = function () {
   
 //Get player three elements
   let playerThreeName = document.getElementById("player-3-name");
-  let gameStartedDivThree = document.getElementById('game-started-3');
-  let playerThree = document.getElementById('player-three');
-  let playerThreeText = document.getElementById('player-three-text');
-  let playerThreeMat = document.getElementById('player-three-player-mat');
-  let playerThreePop = document.getElementById('player-3-pop');
-  let playerThreeStars = document.getElementById('player-three-stars');
+  let gameStartedDivThree = document.getElementById("game-started-3");
+  let playerThree = document.getElementById("player-three");
+  let playerThreeText = document.getElementById("player-three-text");
+  let playerThreeMat = document.getElementById("player-three-player-mat");
+  let playerThreePop = document.getElementById("player-3-pop");
+  let playerThreeStars = document.getElementById("player-three-stars");
   let playerThreeTerritories = document.getElementById("player-three-territory");
   let playerThreeResources = document.getElementById("player-three-resources");
   let playerThreeMoney = document.getElementById("player-three-money");
@@ -52,12 +52,12 @@ window.onload = function () {
   
 //Get player four elements
   let playerFourName = document.getElementById("player-4-name");
-  let gameStartedDivFour = document.getElementById('game-started-4');
-  let playerFour = document.getElementById('player-four');
-  let playerFourText = document.getElementById('player-four-text');
-  let playerFourMat = document.getElementById('player-four-player-mat');
-  let playerFourPop = document.getElementById('player-4-pop');
-  let playerFourStars = document.getElementById('player-four-stars');
+  let gameStartedDivFour = document.getElementById("game-started-4");
+  let playerFour = document.getElementById("player-four");
+  let playerFourText = document.getElementById("player-four-text");
+  let playerFourMat = document.getElementById("player-four-player-mat");
+  let playerFourPop = document.getElementById("player-4-pop");
+  let playerFourStars = document.getElementById("player-four-stars");
   let playerFourTerritories = document.getElementById("player-four-territory");
   let playerFourResources = document.getElementById("player-four-resources");
   let playerFourMoney = document.getElementById("player-four-money");
@@ -65,12 +65,12 @@ window.onload = function () {
   
 //Get player five elements
   let playerFiveName = document.getElementById("player-5-name");
-  let gameStartedDivFive = document.getElementById('game-started-5');
-  let playerFive = document.getElementById('player-five');
-  let playerFiveText = document.getElementById('player-five-text');
-  let playerFiveMat = document.getElementById('player-five-player-mat');
-  let playerFivePop = document.getElementById('player-5-pop');
-  let playerFiveStars = document.getElementById('player-five-stars');
+  let gameStartedDivFive = document.getElementById("game-started-5");
+  let playerFive = document.getElementById("player-five");
+  let playerFiveText = document.getElementById("player-five-text");
+  let playerFiveMat = document.getElementById("player-five-player-mat");
+  let playerFivePop = document.getElementById("player-5-pop");
+  let playerFiveStars = document.getElementById("player-five-stars");
   let playerFiveTerritories = document.getElementById("player-five-territory");
   let playerFiveResources = document.getElementById("player-five-resources");
   let playerFiveMoney = document.getElementById("player-five-money");
@@ -78,12 +78,12 @@ window.onload = function () {
   
 //Get player six elements
   let playerSixName = document.getElementById("player-6-name");
-  let gameStartedDivSix = document.getElementById('game-started-6');
-  let playerSix = document.getElementById('player-six');
-  let playerSixText = document.getElementById('player-six-text');
-  let playerSixMat = document.getElementById('player-six-player-mat');
-  let playerSixPop = document.getElementById('player-6-pop');
-  let playerSixStars = document.getElementById('player-six-stars');
+  let gameStartedDivSix = document.getElementById("game-started-6");
+  let playerSix = document.getElementById("player-six");
+  let playerSixText = document.getElementById("player-six-text");
+  let playerSixMat = document.getElementById("player-six-player-mat");
+  let playerSixPop = document.getElementById("player-6-pop");
+  let playerSixStars = document.getElementById("player-six-stars");
   let playerSixTerritories = document.getElementById("player-six-territory");
   let playerSixResources = document.getElementById("player-six-resources");
   let playerSixMoney = document.getElementById("player-six-money");
@@ -91,12 +91,12 @@ window.onload = function () {
   
 //Get player seven elements
   let playerSevenName = document.getElementById("player-7-name");
-  let gameStartedDivSeven = document.getElementById('game-started-7');
-  let playerSeven = document.getElementById('player-seven');
-  let playerSevenText = document.getElementById('player-seven-text');
-  let playerSevenMat = document.getElementById('player-seven-player-mat');
-  let playerSevenPop = document.getElementById('player-7-pop');
-  let playerSevenStars = document.getElementById('player-seven-stars');
+  let gameStartedDivSeven = document.getElementById("game-started-7");
+  let playerSeven = document.getElementById("player-seven");
+  let playerSevenText = document.getElementById("player-seven-text");
+  let playerSevenMat = document.getElementById("player-seven-player-mat");
+  let playerSevenPop = document.getElementById("player-7-pop");
+  let playerSevenStars = document.getElementById("player-seven-stars");
   let playerSevenTerritories = document.getElementById("player-seven-territory");
   let playerSevenResources = document.getElementById("player-seven-resources");
   let playerSevenMoney = document.getElementById("player-seven-money");
@@ -115,7 +115,7 @@ let players = [];
 
 //Set functions
 function addPlayer(){
-  var personName = prompt("Please enter your name", "Name Here");
+  let personName = prompt("Please enter your name", "Name Here");
   let newPlayer = {
     name: personName,
     playerNumber: players.length + 1,

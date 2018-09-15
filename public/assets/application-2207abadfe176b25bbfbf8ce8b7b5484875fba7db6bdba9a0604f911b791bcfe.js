@@ -11565,92 +11565,99 @@ return this.lastRenderedLocation=this.location,this.notifyApplicationAfterPageLo
 window.onload = function () {
   
   //Get non-player elements
-  let addPlayerButton = document.getElementById('add-player-button');
-  let startGameButton = document.getElementById('start-game-button');
+  let addPlayerButton = document.getElementById("add-player-button");
+  let startGameButton = document.getElementById("start-game-button");
   let structureBonusCard = document.getElementById("strucBonus-dropdown");
   let invaders = false;
-  let gameStarted = false
+  let gameStarted = false;
   let structureBonus = "none";
   
 //Get player one elements
-  let gameStartedDivOne = document.getElementById('game-started-1');
-  let playerOne = document.getElementById('player-one');
-  let playerOneText = document.getElementById('player-one-text');
-  let playerOneMat = document.getElementById('player-one-player-mat');
-  let playerOnePop = document.getElementById('player-1-pop');
-  let playerOneStars = document.getElementById('player-one-stars');
+  let playerOneName = document.getElementById("player-1-name");
+  let gameStartedDivOne = document.getElementById("game-started-1");
+  let playerOne = document.getElementById("player-one");
+  let playerOneText = document.getElementById("player-one-text");
+  let playerOneMat = document.getElementById("player-one-player-mat");
+  let playerOnePop = document.getElementById("player-1-pop");
+  let playerOneStars = document.getElementById("player-one-stars");
   let playerOneTerritories = document.getElementById("player-one-territory");
   let playerOneResources = document.getElementById("player-one-resources");
   let playerOneMoney = document.getElementById("player-one-money");
   let playerOneStrucBonus = document.getElementById("player-one-strucBonus");
   
 //Get player two elements
-  let gameStartedDivTwo = document.getElementById('game-started-2');
-  let playerTwo = document.getElementById('player-two');
-  let playerTwoText = document.getElementById('player-two-text');
-  let playerTwoMat = document.getElementById('player-two-player-mat');
-  let playerTwoPop = document.getElementById('player-2-pop');
-  let playerTwoStars = document.getElementById('player-two-stars');
+  let playerTwoName = document.getElementById("player-2-name");
+  let gameStartedDivTwo = document.getElementById("game-started-2");
+  let playerTwo = document.getElementById("player-two");
+  let playerTwoText = document.getElementById("player-two-text");
+  let playerTwoMat = document.getElementById("player-two-player-mat");
+  let playerTwoPop = document.getElementById("player-2-pop");
+  let playerTwoStars = document.getElementById("player-two-stars");
   let playerTwoTerritories = document.getElementById("player-two-territory");
   let playerTwoResources = document.getElementById("player-two-resources");
   let playerTwoMoney = document.getElementById("player-two-money");
   let playerTwoStrucBonus = document.getElementById("player-two-strucBonus");
   
 //Get player three elements
-  let gameStartedDivThree = document.getElementById('game-started-3');
-  let playerThree = document.getElementById('player-three');
-  let playerThreeText = document.getElementById('player-three-text');
-  let playerThreeMat = document.getElementById('player-three-player-mat');
-  let playerThreePop = document.getElementById('player-3-pop');
-  let playerThreeStars = document.getElementById('player-three-stars');
+  let playerThreeName = document.getElementById("player-3-name");
+  let gameStartedDivThree = document.getElementById("game-started-3");
+  let playerThree = document.getElementById("player-three");
+  let playerThreeText = document.getElementById("player-three-text");
+  let playerThreeMat = document.getElementById("player-three-player-mat");
+  let playerThreePop = document.getElementById("player-3-pop");
+  let playerThreeStars = document.getElementById("player-three-stars");
   let playerThreeTerritories = document.getElementById("player-three-territory");
   let playerThreeResources = document.getElementById("player-three-resources");
   let playerThreeMoney = document.getElementById("player-three-money");
   let playerThreeStrucBonus = document.getElementById("player-three-strucBonus");
   
 //Get player four elements
-  let gameStartedDivFour = document.getElementById('game-started-4');
-  let playerFour = document.getElementById('player-four');
-  let playerFourText = document.getElementById('player-four-text');
-  let playerFourMat = document.getElementById('player-four-player-mat');
-  let playerFourPop = document.getElementById('player-4-pop');
-  let playerFourStars = document.getElementById('player-four-stars');
+  let playerFourName = document.getElementById("player-4-name");
+  let gameStartedDivFour = document.getElementById("game-started-4");
+  let playerFour = document.getElementById("player-four");
+  let playerFourText = document.getElementById("player-four-text");
+  let playerFourMat = document.getElementById("player-four-player-mat");
+  let playerFourPop = document.getElementById("player-4-pop");
+  let playerFourStars = document.getElementById("player-four-stars");
   let playerFourTerritories = document.getElementById("player-four-territory");
   let playerFourResources = document.getElementById("player-four-resources");
   let playerFourMoney = document.getElementById("player-four-money");
   let playerFourStrucBonus = document.getElementById("player-four-strucBonus");
   
 //Get player five elements
-  let gameStartedDivFive = document.getElementById('game-started-5');
-  let playerFive = document.getElementById('player-five');
-  let playerFiveText = document.getElementById('player-five-text');
-  let playerFiveMat = document.getElementById('player-five-player-mat');
-  let playerFivePop = document.getElementById('player-5-pop');
-  let playerFiveStars = document.getElementById('player-five-stars');
+  let playerFiveName = document.getElementById("player-5-name");
+  let gameStartedDivFive = document.getElementById("game-started-5");
+  let playerFive = document.getElementById("player-five");
+  let playerFiveText = document.getElementById("player-five-text");
+  let playerFiveMat = document.getElementById("player-five-player-mat");
+  let playerFivePop = document.getElementById("player-5-pop");
+  let playerFiveStars = document.getElementById("player-five-stars");
   let playerFiveTerritories = document.getElementById("player-five-territory");
   let playerFiveResources = document.getElementById("player-five-resources");
   let playerFiveMoney = document.getElementById("player-five-money");
   let playerFiveStrucBonus = document.getElementById("player-five-strucBonus");
   
 //Get player six elements
-  let gameStartedDivSix = document.getElementById('game-started-6');
-  let playerSix = document.getElementById('player-six');
-  let playerSixText = document.getElementById('player-six-text');
-  let playerSixMat = document.getElementById('player-six-player-mat');
-  let playerSixPop = document.getElementById('player-6-pop');
-  let playerSixStars = document.getElementById('player-six-stars');
+  let playerSixName = document.getElementById("player-6-name");
+  let gameStartedDivSix = document.getElementById("game-started-6");
+  let playerSix = document.getElementById("player-six");
+  let playerSixText = document.getElementById("player-six-text");
+  let playerSixMat = document.getElementById("player-six-player-mat");
+  let playerSixPop = document.getElementById("player-6-pop");
+  let playerSixStars = document.getElementById("player-six-stars");
   let playerSixTerritories = document.getElementById("player-six-territory");
   let playerSixResources = document.getElementById("player-six-resources");
   let playerSixMoney = document.getElementById("player-six-money");
   let playerSixStrucBonus = document.getElementById("player-six-strucBonus");
   
 //Get player seven elements
-  let gameStartedDivSeven = document.getElementById('game-started-7');
-  let playerSeven = document.getElementById('player-seven');
-  let playerSevenText = document.getElementById('player-seven-text');
-  let playerSevenMat = document.getElementById('player-seven-player-mat');
-  let playerSevenPop = document.getElementById('player-7-pop');
-  let playerSevenStars = document.getElementById('player-seven-stars');
+  let playerSevenName = document.getElementById("player-7-name");
+  let gameStartedDivSeven = document.getElementById("game-started-7");
+  let playerSeven = document.getElementById("player-seven");
+  let playerSevenText = document.getElementById("player-seven-text");
+  let playerSevenMat = document.getElementById("player-seven-player-mat");
+  let playerSevenPop = document.getElementById("player-7-pop");
+  let playerSevenStars = document.getElementById("player-seven-stars");
   let playerSevenTerritories = document.getElementById("player-seven-territory");
   let playerSevenResources = document.getElementById("player-seven-resources");
   let playerSevenMoney = document.getElementById("player-seven-money");
@@ -11669,7 +11676,9 @@ let players = [];
 
 //Set functions
 function addPlayer(){
+  let personName = prompt("Please enter your name", "Name Here");
   let newPlayer = {
+    name: personName,
     playerNumber: players.length + 1,
     faction: factions.pop(),
     mat: playerMats.pop(),
@@ -11907,12 +11916,14 @@ addPlayerButton.addEventListener('click', function() {
   switch (players.length + 1) {
     case 1:
       addPlayer();
+      playerOneName.innerHTML = players[0].name;
       playerOne.style.display = "block";
       playerOneText.innerText = "Faction: " + players[0].faction;
       playerOneMat.innerText = "Player mat: " + players[0].mat;
       break;
     case 2:
       addPlayer();
+      playerTwoName.innerHTML = players[1].name;
       playerTwo.style.display = "block";
       playerTwoText.innerText = "Faction: " + players[1].faction;
       playerTwoMat.innerText = "Player mat: " + players[1].mat;
@@ -11920,18 +11931,21 @@ addPlayerButton.addEventListener('click', function() {
       break;
     case 3:
       addPlayer();
+      playerThreeName.innerHTML = players[2].name;
       playerThree.style.display = "block";
       playerThreeText.innerText = "Faction: " + players[2].faction;
       playerThreeMat.innerText = "Player mat: " + players[2].mat;
       break;
     case 4:
       addPlayer();
+      playerFourName.innerHTML = players[3].name;
       playerFour.style.display = "block";
       playerFourText.innerText = "Faction: " + players[3].faction;
       playerFourMat.innerText = "Player mat: " + players[3].mat;
       break;
     case 5:
       addPlayer();
+      playerFiveName.innerHTML = players[4].name;
       playerFive.style.display = "block";
       playerFiveText.innerText = "Faction: " + players[4].faction;
       playerFiveMat.innerText = "Player mat: " + players[4].mat;
