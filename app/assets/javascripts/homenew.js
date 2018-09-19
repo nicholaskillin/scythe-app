@@ -7,6 +7,7 @@ window.onload = function () {
   let addPlayerButton = document.getElementById("add-player-button");
   let startGameButton = document.getElementById("start-game-button");
   let structureBonusCard = document.getElementById("strucBonus-dropdown");
+  let blankState = document.getElementById("blankstate");
   let invaders = false;
   let gameStarted = false;
   let structureBonus = "none";
@@ -363,6 +364,7 @@ addPlayerButton.addEventListener('click', function() {
     case 1:
       addPlayer();
       //playerOneName.innerHTML = players[0].name;
+      blankState.style.display = "none";
       playerOneFactionImage.src = "assets/icons/" + players[0].faction.toLowerCase() + "_icon.png"; 
       playerOneText.innerText = "Faction: " + players[0].faction;
       playerOneMat.innerText = "Player mat: " + players[0].mat;
@@ -380,7 +382,7 @@ addPlayerButton.addEventListener('click', function() {
     case 3:
       addPlayer();
       //playerThreeName.innerHTML = players[2].name;
-      playerThreeFactionImage.src = <%= asset_path('icons/' + players[2].faction.toLowerCase() + '_icon.png'); 
+      playerThreeFactionImage.src = "assets/icons/" + players[2].faction.toLowerCase() + "_icon.png"; 
       playerThreeText.innerText = "Faction: " + players[2].faction;
       playerThreeMat.innerText = "Player mat: " + players[2].mat;
       playerThree.style.display = "block";
