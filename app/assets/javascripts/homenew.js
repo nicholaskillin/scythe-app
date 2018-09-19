@@ -23,6 +23,7 @@ window.onload = function () {
   let playerOneResources = document.getElementById("player-one-resources");
   let playerOneMoney = document.getElementById("player-one-money");
   let playerOneStrucBonus = document.getElementById("player-one-strucBonus");
+  let playerOneFactionImage = document.getElementById('player-1-faction-image');
   
 //Get player two elements
   let playerTwoName = document.getElementById("player-2-name");
@@ -36,6 +37,7 @@ window.onload = function () {
   let playerTwoResources = document.getElementById("player-two-resources");
   let playerTwoMoney = document.getElementById("player-two-money");
   let playerTwoStrucBonus = document.getElementById("player-two-strucBonus");
+  let playerTwoFactionImage = document.getElementById('player-2-faction-image');
   
 //Get player three elements
   let playerThreeName = document.getElementById("player-3-name");
@@ -49,6 +51,7 @@ window.onload = function () {
   let playerThreeResources = document.getElementById("player-three-resources");
   let playerThreeMoney = document.getElementById("player-three-money");
   let playerThreeStrucBonus = document.getElementById("player-three-strucBonus");
+  let playerThreeFactionImage = document.getElementById('player-3-faction-image');
   
 //Get player four elements
   let playerFourName = document.getElementById("player-4-name");
@@ -62,6 +65,7 @@ window.onload = function () {
   let playerFourResources = document.getElementById("player-four-resources");
   let playerFourMoney = document.getElementById("player-four-money");
   let playerFourStrucBonus = document.getElementById("player-four-strucBonus");
+  let playerFourFactionImage = document.getElementById('player-4-faction-image');
   
 //Get player five elements
   let playerFiveName = document.getElementById("player-5-name");
@@ -75,6 +79,7 @@ window.onload = function () {
   let playerFiveResources = document.getElementById("player-five-resources");
   let playerFiveMoney = document.getElementById("player-five-money");
   let playerFiveStrucBonus = document.getElementById("player-five-strucBonus");
+  let playerFiveFactionImage = document.getElementById('player-5-faction-image');
   
 //Get player six elements
   let playerSixName = document.getElementById("player-6-name");
@@ -88,6 +93,7 @@ window.onload = function () {
   let playerSixResources = document.getElementById("player-six-resources");
   let playerSixMoney = document.getElementById("player-six-money");
   let playerSixStrucBonus = document.getElementById("player-six-strucBonus");
+  let playerSixFactionImage = document.getElementById('player-6-faction-image');
   
 //Get player seven elements
   let playerSevenName = document.getElementById("player-7-name");
@@ -101,6 +107,7 @@ window.onload = function () {
   let playerSevenResources = document.getElementById("player-seven-resources");
   let playerSevenMoney = document.getElementById("player-seven-money");
   let playerSevenStrucBonus = document.getElementById("player-seven-strucBonus");
+  let playerSevenFactionImage = document.getElementById('player-7-faction-image');
 
 //Set arrays
 let factions = ["Nordic", "Saxony", "Polania", "Crimea", "Rusviet"];
@@ -115,9 +122,9 @@ let players = [];
 
 //Set functions
 function addPlayer(){
-  let personName = prompt("Please enter your name", "Name Here");
+  //let personName = prompt("Please enter your name", "Name Here");
   let newPlayer = {
-    name: personName,
+    //name: personName,
     playerNumber: players.length + 1,
     faction: factions.pop(),
     mat: playerMats.pop(),
@@ -355,39 +362,44 @@ addPlayerButton.addEventListener('click', function() {
   switch (players.length + 1) {
     case 1:
       addPlayer();
-      playerOneName.innerHTML = players[0].name;
-      playerOne.style.display = "block";
+      //playerOneName.innerHTML = players[0].name;
+      playerOneFactionImage.src = "assets/icons/" + players[0].faction.toLowerCase() + "_icon.png"; 
       playerOneText.innerText = "Faction: " + players[0].faction;
       playerOneMat.innerText = "Player mat: " + players[0].mat;
+      playerOne.style.display = "block";
       break;
     case 2:
       addPlayer();
-      playerTwoName.innerHTML = players[1].name;
-      playerTwo.style.display = "block";
+      // playerTwoName.innerHTML = players[1].name;
+      playerTwoFactionImage.src = "assets/icons/" + players[1].faction.toLowerCase() + "_icon.png";
       playerTwoText.innerText = "Faction: " + players[1].faction;
       playerTwoMat.innerText = "Player mat: " + players[1].mat;
+      playerTwo.style.display = "block";
       startGameButton.style.display = "inline";
       break;
     case 3:
       addPlayer();
-      playerThreeName.innerHTML = players[2].name;
-      playerThree.style.display = "block";
+      //playerThreeName.innerHTML = players[2].name;
+      playerThreeFactionImage.src = "assets/icons/" + players[2].faction.toLowerCase() + "_icon.png"; 
       playerThreeText.innerText = "Faction: " + players[2].faction;
       playerThreeMat.innerText = "Player mat: " + players[2].mat;
+      playerThree.style.display = "block";
       break;
     case 4:
       addPlayer();
-      playerFourName.innerHTML = players[3].name;
-      playerFour.style.display = "block";
+      //playerFourName.innerHTML = players[3].name;
+      playerFourFactionImage.src = "assets/icons/" + players[3].faction.toLowerCase() + "_icon.png"; 
       playerFourText.innerText = "Faction: " + players[3].faction;
       playerFourMat.innerText = "Player mat: " + players[3].mat;
+      playerFour.style.display = "block";
       break;
     case 5:
       addPlayer();
-      playerFiveName.innerHTML = players[4].name;
-      playerFive.style.display = "block";
+      //playerFiveName.innerHTML = players[4].name;
+      playerFiveFactionImage.src = "assets/icons/" + players[4].faction.toLowerCase() + "_icon.png"; 
       playerFiveText.innerText = "Faction: " + players[4].faction;
       playerFiveMat.innerText = "Player mat: " + players[4].mat;
+      playerFive.style.display = "block";
       addPlayerButton.style.display = 'none';
       break;
   }
