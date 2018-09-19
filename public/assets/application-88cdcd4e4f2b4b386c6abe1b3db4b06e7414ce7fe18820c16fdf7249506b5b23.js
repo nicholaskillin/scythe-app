@@ -11559,11 +11559,12 @@ return this.lastRenderedLocation=this.location,this.notifyApplicationAfterPageLo
   App.cable = ActionCable.createConsumer();
 
 }).call(this);
-
+ 
 //Get stuff from the DOM
 
 window.onload = function () {
   
+  let playerStats = $(".game-started")
   //Get non-player elements
   let addPlayerButton = document.getElementById("add-player-button");
   let startGameButton = document.getElementById("start-game-button");
@@ -11575,7 +11576,6 @@ window.onload = function () {
   
 //Get player one elements
   let playerOneName = document.getElementById("player-1-name");
-  let gameStartedDivOne = document.getElementById("game-started-1");
   let playerOne = document.getElementById("player-1");
   let playerOneText = document.getElementById("player-1-text");
   let playerOneMat = document.getElementById("player-1-player-mat");
@@ -11589,7 +11589,6 @@ window.onload = function () {
   
 //Get player two elements
   let playerTwoName = document.getElementById("player-2-name");
-  let gameStartedDivTwo = document.getElementById("game-started-2");
   let playerTwo = document.getElementById("player-2");
   let playerTwoText = document.getElementById("player-2-text");
   let playerTwoMat = document.getElementById("player-2-player-mat");
@@ -11603,7 +11602,6 @@ window.onload = function () {
   
 //Get player three elements
   let playerThreeName = document.getElementById("player-3-name");
-  let gameStartedDivThree = document.getElementById("game-started-3");
   let playerThree = document.getElementById("player-3");
   let playerThreeText = document.getElementById("player-3-text");
   let playerThreeMat = document.getElementById("player-3-player-mat");
@@ -11617,7 +11615,6 @@ window.onload = function () {
   
 //Get player four elements
   let playerFourName = document.getElementById("player-4-name");
-  let gameStartedDivFour = document.getElementById("game-started-4");
   let playerFour = document.getElementById("player-4");
   let playerFourText = document.getElementById("player-4-text");
   let playerFourMat = document.getElementById("player-4-player-mat");
@@ -11631,7 +11628,6 @@ window.onload = function () {
   
 //Get player five elements
   let playerFiveName = document.getElementById("player-5-name");
-  let gameStartedDivFive = document.getElementById("game-started-5");
   let playerFive = document.getElementById("player-5");
   let playerFiveText = document.getElementById("player-5-text");
   let playerFiveMat = document.getElementById("player-5-player-mat");
@@ -11645,7 +11641,6 @@ window.onload = function () {
   
 //Get player six elements
   let playerSixName = document.getElementById("player-6-name");
-  let gameStartedDivSix = document.getElementById("game-started-6");
   let playerSix = document.getElementById("player-6");
   let playerSixText = document.getElementById("player-6-text");
   let playerSixMat = document.getElementById("player-6-player-mat");
@@ -11659,7 +11654,6 @@ window.onload = function () {
   
 //Get player seven elements
   let playerSevenName = document.getElementById("player-7-name");
-  let gameStartedDivSeven = document.getElementById("game-started-7");
   let playerSeven = document.getElementById("player-7");
   let playerSevenText = document.getElementById("player-7-text");
   let playerSevenMat = document.getElementById("player-7-player-mat");
@@ -11970,13 +11964,9 @@ addPlayerButton.addEventListener('click', function() {
 
 startGameButton.addEventListener('click', function() {
   gameStarted = true;
-  gameStartedDivOne.style.display = "block";
-  gameStartedDivTwo.style.display = "block";
-  gameStartedDivThree.style.display = "block";
-  gameStartedDivFour.style.display = "block";
-  gameStartedDivFive.style.display = "block";
-  gameStartedDivSix.style.display = "block";
-  gameStartedDivSeven.style.display = "block";
+  for (var i = 0; i < playerStats.length; i++) {
+    playerStats[i].style.display = "block";
+  }
 });
 
 // Update Player Popularity
