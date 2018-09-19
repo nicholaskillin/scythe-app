@@ -11564,7 +11564,6 @@ return this.lastRenderedLocation=this.location,this.notifyApplicationAfterPageLo
 
 window.onload = function () {
   
-  let playerStats = $(".game-started")
   //Get non-player elements
   let addPlayerButton = document.getElementById("add-player-button");
   let startGameButton = document.getElementById("start-game-button");
@@ -11573,6 +11572,7 @@ window.onload = function () {
   let invaders = false;
   let gameStarted = false;
   let structureBonus = "none";
+  let playerStats = $(".game-started")
   
 //Get player one elements
   let playerOneName = document.getElementById("player-1-name");
@@ -11667,12 +11667,12 @@ window.onload = function () {
 
 //Set arrays
 let factions = ["Nordic", "Saxony", "Polania", "Crimea", "Rusviet"];
+let playerMats = ["Mechanical", "Patriotic", "Agricultural", "Industrial", "Engineering"];
 if (invaders) {
-  factions.push("Albion");
-  factions.push("Togawa");
+  factions.push("Albion", "Togawa");
+  playerMats.push("Militant", "Innovative");
 }
 randomizeArray(factions);
-let playerMats = ["Mechanical", "Patriotic", "Agricultural", "Industrial", "Engineering"];
 randomizeArray(playerMats);
 let players = [];
 
