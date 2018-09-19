@@ -380,7 +380,7 @@ addPlayerButton.addEventListener('click', function() {
     case 3:
       addPlayer();
       //playerThreeName.innerHTML = players[2].name;
-      playerThreeFactionImage.src = "assets/icons/" + players[2].faction.toLowerCase() + "_icon.png"; 
+      playerThreeFactionImage.src = <%= asset_path('icons/' + players[2].faction.toLowerCase() + '_icon.png'); 
       playerThreeText.innerText = "Faction: " + players[2].faction;
       playerThreeMat.innerText = "Player mat: " + players[2].mat;
       playerThree.style.display = "block";
