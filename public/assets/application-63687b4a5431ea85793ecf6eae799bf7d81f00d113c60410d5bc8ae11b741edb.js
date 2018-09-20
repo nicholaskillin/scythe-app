@@ -11584,49 +11584,42 @@ window.onload = function () {
   let playerTerritories = $(".player-territory");
   
 //Get player one elements
-  let playerOneTerritories = document.getElementById("player-1-territory");
   let playerOneResources = document.getElementById("player-1-resources");
   let playerOneMoney = document.getElementById("player-1-money");
   let playerOneStrucBonus = document.getElementById("player-1-strucBonus");
   let playerOneFactionImage = document.getElementById('player-1-faction-image');
   
 //Get player two elements
-  let playerTwoTerritories = document.getElementById("player-2-territory");
   let playerTwoResources = document.getElementById("player-2-resources");
   let playerTwoMoney = document.getElementById("player-2-money");
   let playerTwoStrucBonus = document.getElementById("player-2-strucBonus");
   let playerTwoFactionImage = document.getElementById('player-2-faction-image');
   
 //Get player three elements
-  let playerThreeTerritories = document.getElementById("player-3-territory");
   let playerThreeResources = document.getElementById("player-3-resources");
   let playerThreeMoney = document.getElementById("player-3-money");
   let playerThreeStrucBonus = document.getElementById("player-3-strucBonus");
   let playerThreeFactionImage = document.getElementById('player-3-faction-image');
   
 //Get player four elements
-  let playerFourTerritories = document.getElementById("player-4-territory");
   let playerFourResources = document.getElementById("player-4-resources");
   let playerFourMoney = document.getElementById("player-4-money");
   let playerFourStrucBonus = document.getElementById("player-4-strucBonus");
   let playerFourFactionImage = document.getElementById('player-4-faction-image');
   
 //Get player five elements
-  let playerFiveTerritories = document.getElementById("player-5-territory");
   let playerFiveResources = document.getElementById("player-5-resources");
   let playerFiveMoney = document.getElementById("player-5-money");
   let playerFiveStrucBonus = document.getElementById("player-5-strucBonus");
   let playerFiveFactionImage = document.getElementById('player-5-faction-image');
   
 //Get player six elements
-  let playerSixTerritories = document.getElementById("player-6-territory");
   let playerSixResources = document.getElementById("player-6-resources");
   let playerSixMoney = document.getElementById("player-6-money");
   let playerSixStrucBonus = document.getElementById("player-6-strucBonus");
   let playerSixFactionImage = document.getElementById('player-6-faction-image');
   
 //Get player seven elements
-  let playerSevenTerritories = document.getElementById("player-7-territory");
   let playerSevenResources = document.getElementById("player-7-resources");
   let playerSevenMoney = document.getElementById("player-7-money");
   let playerSevenStrucBonus = document.getElementById("player-7-strucBonus");
