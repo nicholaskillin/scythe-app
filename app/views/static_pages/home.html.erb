@@ -31,7 +31,7 @@
                 <img src="<%= asset_path('icons/stars.png') %>">
               </div>
               <div class="col">
-                <input id="player-<%= i %>-stars" type="number" name="stars" value= 0 class="score-input" min="0" max="6">
+                <input type="number" name="stars" value= 0 class="player-stars score-input" min="0" max="6">
               </div>
               <div class="col">
                 <p id="player-<%= i %>-stars-score">0</p>
@@ -42,7 +42,7 @@
                 <img src="<%= asset_path('icons/territory.png') %>">
               </div>
               <div class="col">
-                <input id="player-<%= i %>-territory" type="number" name="territory" value= 0 class="score-input" min="0">
+                <input type="number" name="territory" value= 0 class="player-territory score-input" min="0">
               </div>
               <div class="col">
                 <p id="player-<%= i %>-territory-score">0</p>

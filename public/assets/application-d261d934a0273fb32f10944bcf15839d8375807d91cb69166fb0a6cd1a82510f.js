@@ -11580,9 +11580,10 @@ window.onload = function () {
   let playerText = $(".player-text");
   let playerMatText = $(".player-mat");
   let playerPopularity = $(".player-popularity");
+  let playerStars = $(".player-stars");
+  let playerTerritories = $(".player-territory");
   
 //Get player one elements
-  let playerOneStars = document.getElementById("player-1-stars");
   let playerOneTerritories = document.getElementById("player-1-territory");
   let playerOneResources = document.getElementById("player-1-resources");
   let playerOneMoney = document.getElementById("player-1-money");
@@ -11590,7 +11591,6 @@ window.onload = function () {
   let playerOneFactionImage = document.getElementById('player-1-faction-image');
   
 //Get player two elements
-  let playerTwoStars = document.getElementById("player-2-stars");
   let playerTwoTerritories = document.getElementById("player-2-territory");
   let playerTwoResources = document.getElementById("player-2-resources");
   let playerTwoMoney = document.getElementById("player-2-money");
@@ -11598,7 +11598,6 @@ window.onload = function () {
   let playerTwoFactionImage = document.getElementById('player-2-faction-image');
   
 //Get player three elements
-  let playerThreeStars = document.getElementById("player-3-stars");
   let playerThreeTerritories = document.getElementById("player-3-territory");
   let playerThreeResources = document.getElementById("player-3-resources");
   let playerThreeMoney = document.getElementById("player-3-money");
@@ -11606,7 +11605,6 @@ window.onload = function () {
   let playerThreeFactionImage = document.getElementById('player-3-faction-image');
   
 //Get player four elements
-  let playerFourStars = document.getElementById("player-4-stars");
   let playerFourTerritories = document.getElementById("player-4-territory");
   let playerFourResources = document.getElementById("player-4-resources");
   let playerFourMoney = document.getElementById("player-4-money");
@@ -11614,7 +11612,6 @@ window.onload = function () {
   let playerFourFactionImage = document.getElementById('player-4-faction-image');
   
 //Get player five elements
-  let playerFiveStars = document.getElementById("player-5-stars");
   let playerFiveTerritories = document.getElementById("player-5-territory");
   let playerFiveResources = document.getElementById("player-5-resources");
   let playerFiveMoney = document.getElementById("player-5-money");
@@ -11622,7 +11619,6 @@ window.onload = function () {
   let playerFiveFactionImage = document.getElementById('player-5-faction-image');
   
 //Get player six elements
-  let playerSixStars = document.getElementById("player-6-stars");
   let playerSixTerritories = document.getElementById("player-6-territory");
   let playerSixResources = document.getElementById("player-6-resources");
   let playerSixMoney = document.getElementById("player-6-money");
@@ -11630,7 +11626,6 @@ window.onload = function () {
   let playerSixFactionImage = document.getElementById('player-6-faction-image');
   
 //Get player seven elements
-  let playerSevenStars = document.getElementById("player-7-stars");
   let playerSevenTerritories = document.getElementById("player-7-territory");
   let playerSevenResources = document.getElementById("player-7-resources");
   let playerSevenMoney = document.getElementById("player-7-money");
@@ -11972,89 +11967,76 @@ playerPopularity[6].addEventListener('input', function() {
 
 // Update Player Stars
 
-playerOneStars.addEventListener('input', function() {
-  let newPlayerStars = document.getElementById('player-1-stars').value;
-  players[0].stars = newPlayerStars;
+playerStars[0].addEventListener('input', function() {
+  players[0].stars = playerStars[0].value;
+  console.log(players[0]);
   updateStars(players[0]);
 });
 
-playerTwoStars.addEventListener('input', function() {
-  let newPlayerStars = document.getElementById('player-2-stars').value;
-  players[1].stars = newPlayerStars;
+playerStars[1].addEventListener('input', function() {
+  players[1].stars = playerStars[1].value;
   updateStars(players[1]);
 });
 
-playerThreeStars.addEventListener('input', function() {
-  let newPlayerStars = document.getElementById('player-3-stars').value;
-  players[2].stars = newPlayerStars;
+playerStars[2].addEventListener('input', function() {
+  players[2].stars = playerStars[2].value;
   updateStars(players[2]);
 });
 
-playerFourStars.addEventListener('input', function() {
-  let newPlayerStars = document.getElementById('player-4-stars').value;
-  players[3].stars = newPlayerStars;
+playerStars[3].addEventListener('input', function() {
+  players[3].stars = playerStars[3].value;
   updateStars(players[3]);
 });
 
-playerFiveStars.addEventListener('input', function() {
-  let newPlayerStars = document.getElementById('player-5-stars').value;
-  players[4].stars = newPlayerStars;
+playerStars[4].addEventListener('input', function() {
+  players[4].stars = playerStars[4].value;
   updateStars(players[4]);
 });
 
-playerSixStars.addEventListener('input', function() {
-  let newPlayerStars = document.getElementById('player-6-stars').value;
-  players[5].stars = newPlayerStars;
+playerStars[5].addEventListener('input', function() {
+  players[5].stars = playerStars[5].value;
   updateStars(players[5]);
 });
 
-playerSevenStars.addEventListener('input', function() {
-  let newPlayerStars = document.getElementById('player-7-stars').value;
-  players[6].stars = newPlayerStars;
+playerStars[6].addEventListener('input', function() {
+  players[6].stars = playerStars[6].value;
   updateStars(players[6]);
 });
 
 //Update Player Territory
 
-playerOneTerritories.addEventListener('input', function () {
-  let newPlayerTerritories = playerOneTerritories.value;
-  players[0].territory = newPlayerTerritories;
+playerTerritories[0].addEventListener('input', function () {
+  players[0].territory = playerTerritories[0].value;
   updateTerrirories(players[0]);
 });
 
-playerTwoTerritories.addEventListener('input', function () {
-  let newPlayerTerritories = playerTwoTerritories.value;
-  players[1].territory = newPlayerTerritories;
+playerTerritories[1].addEventListener('input', function () {
+  players[1].territory = playerTerritories[1].value;
   updateTerrirories(players[1]);
 });
 
-playerThreeTerritories.addEventListener('input', function () {
-  let newPlayerTerritories = playerThreeTerritories.value;
-  players[2].territory = newPlayerTerritories;
+playerTerritories[2].addEventListener('input', function () {
+  players[2].territory = playerTerritories[2].value;
   updateTerrirories(players[2]);
 });
 
-playerFourTerritories.addEventListener('input', function () {
-  let newPlayerTerritories = playerFourTerritories.value;
-  players[3].territory = newPlayerTerritories;
+playerTerritories[3].addEventListener('input', function () {
+  players[3].territory = playerTerritories[3].value;
   updateTerrirories(players[3]);
 });
 
-playerFiveTerritories.addEventListener('input', function () {
-  let newPlayerTerritories = playerFiveTerritories.value;
-  players[4].territory = newPlayerTerritories;
+playerTerritories[4].addEventListener('input', function () {
+  players[4].territory = playerTerritories[4].value;
   updateTerrirories(players[4]);
 });
 
-playerSixTerritories.addEventListener('input', function () {
-  let newPlayerTerritories = playerSixTerritories.value;
-  players[5].territory = newPlayerTerritories;
+playerTerritories[5].addEventListener('input', function () {
+  players[5].territory = playerTerritories[5].value;
   updateTerrirories(players[5]);
 });
 
-playerSevenTerritories.addEventListener('input', function () {
-  let newPlayerTerritories = playerSevenTerritories.value;
-  players[6].territory = newPlayerTerritories;
+playerTerritories[6].addEventListener('input', function () {
+  players[6].territory = playerTerritories[6].value;
   updateTerrirories(players[6]);
 });
 
