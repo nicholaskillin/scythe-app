@@ -18,6 +18,7 @@ window.onload = function () {
   let playerSections = $(".player-section");
   let playerText = $(".player-text");
   let playerMatText = $(".player-mat");
+  let playerPopularity = $(".player-popularity");
   
 //Get player one elements
   let playerOnePop = document.getElementById("player-1-pop");
@@ -122,8 +123,7 @@ function randomizeArray(array) {
 }
 
 function updatePopularity(player) {
-  let elementId = "player-" + player.playerNumber + "-pop";
-  let newPlayerPop = document.getElementById(elementId).value;
+  let newPlayerPop = playerPopularity[players.indexOf(player)].value;
   player.popularity = newPlayerPop;
   updateStars(player);
   updateTerrirories(player);
@@ -388,31 +388,31 @@ startGameButton.addEventListener('click', function() {
 
 // Update Player Popularity
 
-playerOnePop.addEventListener('input', function() {
+playerPopularity[0].addEventListener('input', function() {
   updatePopularity(players[0]);
 });
 
-playerTwoPop.addEventListener('input', function() {
+playerPopularity[1].addEventListener('input', function() {
   updatePopularity(players[1]);
 });
 
-playerThreePop.addEventListener('input', function() {
+playerPopularity[2].addEventListener('input', function() {
   updatePopularity(players[2]);
 });
 
-playerFourPop.addEventListener('input', function() {
+playerPopularity[3].addEventListener('input', function() {
   updatePopularity(players[3]);
 });
 
-playerFivePop.addEventListener('input', function() {
+playerPopularity[4].addEventListener('input', function() {
   updatePopularity(players[4]);
 });
 
-playerSixPop.addEventListener('input', function() {
+playerPopularity[5].addEventListener('input', function() {
   updatePopularity(players[5]);
 });
 
-playerSevenPop.addEventListener('input', function() {
+playerPopularity[6].addEventListener('input', function() {
   updatePopularity(players[6]);
 });
 
