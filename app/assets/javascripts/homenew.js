@@ -21,7 +21,6 @@ window.onload = function () {
   let playerPopularity = $(".player-popularity");
   
 //Get player one elements
-  let playerOnePop = document.getElementById("player-1-pop");
   let playerOneStars = document.getElementById("player-1-stars");
   let playerOneTerritories = document.getElementById("player-1-territory");
   let playerOneResources = document.getElementById("player-1-resources");
@@ -30,7 +29,6 @@ window.onload = function () {
   let playerOneFactionImage = document.getElementById('player-1-faction-image');
   
 //Get player two elements
-  let playerTwoPop = document.getElementById("player-2-pop");
   let playerTwoStars = document.getElementById("player-2-stars");
   let playerTwoTerritories = document.getElementById("player-2-territory");
   let playerTwoResources = document.getElementById("player-2-resources");
@@ -39,7 +37,6 @@ window.onload = function () {
   let playerTwoFactionImage = document.getElementById('player-2-faction-image');
   
 //Get player three elements
-  let playerThreePop = document.getElementById("player-3-pop");
   let playerThreeStars = document.getElementById("player-3-stars");
   let playerThreeTerritories = document.getElementById("player-3-territory");
   let playerThreeResources = document.getElementById("player-3-resources");
@@ -48,7 +45,6 @@ window.onload = function () {
   let playerThreeFactionImage = document.getElementById('player-3-faction-image');
   
 //Get player four elements
-  let playerFourPop = document.getElementById("player-4-pop");
   let playerFourStars = document.getElementById("player-4-stars");
   let playerFourTerritories = document.getElementById("player-4-territory");
   let playerFourResources = document.getElementById("player-4-resources");
@@ -57,7 +53,6 @@ window.onload = function () {
   let playerFourFactionImage = document.getElementById('player-4-faction-image');
   
 //Get player five elements
-  let playerFivePop = document.getElementById("player-5-pop");
   let playerFiveStars = document.getElementById("player-5-stars");
   let playerFiveTerritories = document.getElementById("player-5-territory");
   let playerFiveResources = document.getElementById("player-5-resources");
@@ -66,7 +61,6 @@ window.onload = function () {
   let playerFiveFactionImage = document.getElementById('player-5-faction-image');
   
 //Get player six elements
-  let playerSixPop = document.getElementById("player-6-pop");
   let playerSixStars = document.getElementById("player-6-stars");
   let playerSixTerritories = document.getElementById("player-6-territory");
   let playerSixResources = document.getElementById("player-6-resources");
@@ -75,7 +69,6 @@ window.onload = function () {
   let playerSixFactionImage = document.getElementById('player-6-faction-image');
   
 //Get player seven elements
-  let playerSevenPop = document.getElementById("player-7-pop");
   let playerSevenStars = document.getElementById("player-7-stars");
   let playerSevenTerritories = document.getElementById("player-7-territory");
   let playerSevenResources = document.getElementById("player-7-resources");
