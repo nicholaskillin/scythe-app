@@ -11,13 +11,15 @@ window.onload = function () {
   let invaders = false;
   let gameStarted = false;
   let structureBonus = "none";
-  let playerStats = $(".game-started")
+  
+//Get player elements  
+  let playerStats = $(".game-started");
+  let playerNames = $(".player-name");
+  let playerSections = $(".player-section");
+  let playerText = $(".player-text");
+  let playerMatText = $(".player-mat");
   
 //Get player one elements
-  let playerOneName = document.getElementById("player-1-name");
-  let playerOne = document.getElementById("player-1");
-  let playerOneText = document.getElementById("player-1-text");
-  let playerOneMat = document.getElementById("player-1-player-mat");
   let playerOnePop = document.getElementById("player-1-pop");
   let playerOneStars = document.getElementById("player-1-stars");
   let playerOneTerritories = document.getElementById("player-1-territory");
@@ -27,10 +29,6 @@ window.onload = function () {
   let playerOneFactionImage = document.getElementById('player-1-faction-image');
   
 //Get player two elements
-  let playerTwoName = document.getElementById("player-2-name");
-  let playerTwo = document.getElementById("player-2");
-  let playerTwoText = document.getElementById("player-2-text");
-  let playerTwoMat = document.getElementById("player-2-player-mat");
   let playerTwoPop = document.getElementById("player-2-pop");
   let playerTwoStars = document.getElementById("player-2-stars");
   let playerTwoTerritories = document.getElementById("player-2-territory");
@@ -40,10 +38,6 @@ window.onload = function () {
   let playerTwoFactionImage = document.getElementById('player-2-faction-image');
   
 //Get player three elements
-  let playerThreeName = document.getElementById("player-3-name");
-  let playerThree = document.getElementById("player-3");
-  let playerThreeText = document.getElementById("player-3-text");
-  let playerThreeMat = document.getElementById("player-3-player-mat");
   let playerThreePop = document.getElementById("player-3-pop");
   let playerThreeStars = document.getElementById("player-3-stars");
   let playerThreeTerritories = document.getElementById("player-3-territory");
@@ -53,10 +47,6 @@ window.onload = function () {
   let playerThreeFactionImage = document.getElementById('player-3-faction-image');
   
 //Get player four elements
-  let playerFourName = document.getElementById("player-4-name");
-  let playerFour = document.getElementById("player-4");
-  let playerFourText = document.getElementById("player-4-text");
-  let playerFourMat = document.getElementById("player-4-player-mat");
   let playerFourPop = document.getElementById("player-4-pop");
   let playerFourStars = document.getElementById("player-4-stars");
   let playerFourTerritories = document.getElementById("player-4-territory");
@@ -66,10 +56,6 @@ window.onload = function () {
   let playerFourFactionImage = document.getElementById('player-4-faction-image');
   
 //Get player five elements
-  let playerFiveName = document.getElementById("player-5-name");
-  let playerFive = document.getElementById("player-5");
-  let playerFiveText = document.getElementById("player-5-text");
-  let playerFiveMat = document.getElementById("player-5-player-mat");
   let playerFivePop = document.getElementById("player-5-pop");
   let playerFiveStars = document.getElementById("player-5-stars");
   let playerFiveTerritories = document.getElementById("player-5-territory");
@@ -79,10 +65,6 @@ window.onload = function () {
   let playerFiveFactionImage = document.getElementById('player-5-faction-image');
   
 //Get player six elements
-  let playerSixName = document.getElementById("player-6-name");
-  let playerSix = document.getElementById("player-6");
-  let playerSixText = document.getElementById("player-6-text");
-  let playerSixMat = document.getElementById("player-6-player-mat");
   let playerSixPop = document.getElementById("player-6-pop");
   let playerSixStars = document.getElementById("player-6-stars");
   let playerSixTerritories = document.getElementById("player-6-territory");
@@ -92,10 +74,6 @@ window.onload = function () {
   let playerSixFactionImage = document.getElementById('player-6-faction-image');
   
 //Get player seven elements
-  let playerSevenName = document.getElementById("player-7-name");
-  let playerSeven = document.getElementById("player-7");
-  let playerSevenText = document.getElementById("player-7-text");
-  let playerSevenMat = document.getElementById("player-7-player-mat");
   let playerSevenPop = document.getElementById("player-7-pop");
   let playerSevenStars = document.getElementById("player-7-stars");
   let playerSevenTerritories = document.getElementById("player-7-territory");
@@ -357,45 +335,45 @@ addPlayerButton.addEventListener('click', function() {
   switch (players.length + 1) {
     case 1:
       addPlayer();
-      //playerOneName.innerHTML = players[0].name;
+      //playerNames[0].innerHTML = players[0].name;
       blankState.style.display = "none";
       playerOneFactionImage.src = "assets/icons/" + players[0].faction.toLowerCase() + "_icon.png"; 
-      playerOneText.innerText = "Faction: " + players[0].faction;
-      playerOneMat.innerText = "Player mat: " + players[0].mat;
-      playerOne.style.display = "block";
+      playerText[0].innerText = "Faction: " + players[0].faction;
+      playerMatText[0].innerText = "Player mat: " + players[0].mat;
+      playerSections[0].style.display = "block";
       break;
     case 2:
       addPlayer();
-      // playerTwoName.innerHTML = players[1].name;
+      //playerNames[1].innerHTML = players[1].name;
       playerTwoFactionImage.src = "assets/icons/" + players[1].faction.toLowerCase() + "_icon.png";
-      playerTwoText.innerText = "Faction: " + players[1].faction;
-      playerTwoMat.innerText = "Player mat: " + players[1].mat;
-      playerTwo.style.display = "block";
+      playerText[1].innerText = "Faction: " + players[1].faction;
+      playerMatText[1].innerText = "Player mat: " + players[1].mat;
+      playerSections[1].style.display = "block";
       startGameButton.style.display = "inline";
       break;
     case 3:
       addPlayer();
-      //playerThreeName.innerHTML = players[2].name;
+      //playerNames[2].innerHTML = players[2].name;
       playerThreeFactionImage.src = "assets/icons/" + players[2].faction.toLowerCase() + "_icon.png"; 
-      playerThreeText.innerText = "Faction: " + players[2].faction;
-      playerThreeMat.innerText = "Player mat: " + players[2].mat;
-      playerThree.style.display = "block";
+      playerText[2].innerText = "Faction: " + players[2].faction;
+      playerMatText[2].innerText = "Player mat: " + players[2].mat;
+      playerSections[2].style.display = "block";
       break;
     case 4:
       addPlayer();
-      //playerFourName.innerHTML = players[3].name;
+      //playerNames[3].innerHTML = players[3].name;
       playerFourFactionImage.src = "assets/icons/" + players[3].faction.toLowerCase() + "_icon.png"; 
-      playerFourText.innerText = "Faction: " + players[3].faction;
-      playerFourMat.innerText = "Player mat: " + players[3].mat;
-      playerFour.style.display = "block";
+      playerText[3].innerText = "Faction: " + players[3].faction;
+      playerMatText[3].innerText = "Player mat: " + players[3].mat;
+      playerSections[3].style.display = "block";
       break;
     case 5:
       addPlayer();
-      //playerFiveName.innerHTML = players[4].name;
+      //playerNames[4].innerHTML = players[4].name;
       playerFiveFactionImage.src = "assets/icons/" + players[4].faction.toLowerCase() + "_icon.png"; 
-      playerFiveText.innerText = "Faction: " + players[4].faction;
-      playerFiveMat.innerText = "Player mat: " + players[4].mat;
-      playerFive.style.display = "block";
+      playerText[4].innerText = "Faction: " + players[4].faction;
+      playerMatText[4].innerText = "Player mat: " + players[4].mat;
+      playerSections[4].style.display = "block";
       addPlayerButton.style.display = 'none';
       break;
   }
