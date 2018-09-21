@@ -8780,43 +8780,49 @@ button.close {
   }
 }
 /* universal styles */
-/* line 6, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+/* line 5, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+body {
+  min-width: 408px;
+}
+
+/* line 9, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
 center {
   text-align: center;
 }
 
 /* navbar */
 /* typography */
-/* line 15, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+/* line 18, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
 h2 {
   text-align: center;
 }
 
 /* player area */
-/* line 20, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+/* line 23, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
 .player {
   text-align: center;
   max-width: 400px;
   display: none;
+  min-width: 188px;
 }
 
-/* line 26, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+/* line 30, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
 img {
   width: 50px;
   height: 50px;
 }
 
-/* line 31, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+/* line 35, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
 .game-started {
   display: none;
 }
 
-/* line 35, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+/* line 39, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
 .score-input {
   max-width: 35px;
 }
 
-/* line 39, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+/* line 43, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
 .faction-icon {
   width: 100px;
   height: 100px;
