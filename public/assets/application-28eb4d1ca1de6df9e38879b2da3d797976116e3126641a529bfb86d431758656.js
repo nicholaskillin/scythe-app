@@ -11582,48 +11582,10 @@ window.onload = function () {
   let playerPopularity = $(".player-popularity");
   let playerStars = $(".player-stars");
   let playerTerritories = $(".player-territory");
-  
-//Get player one elements
-  let playerOneResources = document.getElementById("player-1-resources");
-  let playerOneMoney = document.getElementById("player-1-money");
-  let playerOneStrucBonus = document.getElementById("player-1-strucBonus");
-  let playerOneFactionImage = document.getElementById('player-1-faction-image');
-  
-//Get player two elements
-  let playerTwoResources = document.getElementById("player-2-resources");
-  let playerTwoMoney = document.getElementById("player-2-money");
-  let playerTwoStrucBonus = document.getElementById("player-2-strucBonus");
-  let playerTwoFactionImage = document.getElementById('player-2-faction-image');
-  
-//Get player three elements
-  let playerThreeResources = document.getElementById("player-3-resources");
-  let playerThreeMoney = document.getElementById("player-3-money");
-  let playerThreeStrucBonus = document.getElementById("player-3-strucBonus");
-  let playerThreeFactionImage = document.getElementById('player-3-faction-image');
-  
-//Get player four elements
-  let playerFourResources = document.getElementById("player-4-resources");
-  let playerFourMoney = document.getElementById("player-4-money");
-  let playerFourStrucBonus = document.getElementById("player-4-strucBonus");
-  let playerFourFactionImage = document.getElementById('player-4-faction-image');
-  
-//Get player five elements
-  let playerFiveResources = document.getElementById("player-5-resources");
-  let playerFiveMoney = document.getElementById("player-5-money");
-  let playerFiveStrucBonus = document.getElementById("player-5-strucBonus");
-  let playerFiveFactionImage = document.getElementById('player-5-faction-image');
-  
-//Get player six elements
-  let playerSixResources = document.getElementById("player-6-resources");
-  let playerSixMoney = document.getElementById("player-6-money");
-  let playerSixStrucBonus = document.getElementById("player-6-strucBonus");
-  let playerSixFactionImage = document.getElementById('player-6-faction-image');
-  
-//Get player seven elements
-  let playerSevenResources = document.getElementById("player-7-resources");
-  let playerSevenMoney = document.getElementById("player-7-money");
-  let playerSevenStrucBonus = document.getElementById("player-7-strucBonus");
-  let playerSevenFactionImage = document.getElementById('player-7-faction-image');
+  let playerResources = $(".player-resources");
+  let playerMoney = $(".player-money");
+  let playerStrucBonus = $(".player-structure-bonus");
+  let playerFactionImage = $(".faction-icon");
 
 //Set arrays
 let factions = ["Nordic", "Saxony", "Polania", "Crimea", "Rusviet"];
@@ -11817,58 +11779,34 @@ structureBonusCard.addEventListener('change', function() {
   structureBonus = structureBonusCard.value;
   switch (structureBonusCard.value) {
     case "Tunnels Adjacent":
-      playerOneStrucBonus.max = "6";
-      playerTwoStrucBonus.max = "6";
-      playerThreeStrucBonus.max = "6";
-      playerFourStrucBonus.max = "6";
-      playerFiveStrucBonus.max = "6";
-      playerSixStrucBonus.max = "6";
-      playerSevenStrucBonus.max = "6";
+      for (var i=0; i < playerStrucBonus.length; i++) {
+        playerStrucBonus[i].max = "6";
+      }
       break;
     case "Lakes":
-       playerOneStrucBonus.max = "7";
-       playerTwoStrucBonus.max = "7";
-       playerThreeStrucBonus.max = "7";
-       playerFourStrucBonus.max = "7";
-       playerFiveStrucBonus.max = "7";
-       playerSixStrucBonus.max = "7";
-       playerSevenStrucBonus.max = "7";
+      for (var i=0; i < playerStrucBonus.length; i++) {
+       playerStrucBonus[i].max = "7";
+      }
       break;
     case "Encounters":
-       playerOneStrucBonus.max = "7";
-       playerTwoStrucBonus.max = "7";
-       playerThreeStrucBonus.max = "7";
-       playerFourStrucBonus.max = "7";
-       playerFiveStrucBonus.max = "7";
-       playerSixStrucBonus.max = "7";
-       playerSevenStrucBonus.max = "7";
+      for (var i=0; i < playerStrucBonus.length; i++) {
+       playerStrucBonus[i].max = "7";
+      }
       break;
     case "Structure on Tunnel":
-       playerOneStrucBonus.max = "4";
-       playerTwoStrucBonus.max = "4";
-       playerThreeStrucBonus.max = "4";
-       playerFourStrucBonus.max = "4";
-       playerFiveStrucBonus.max = "4";
-       playerSixStrucBonus.max = "4";
-       playerSevenStrucBonus.max = "4";
+      for (var i=0; i < playerStrucBonus.length; i++) {
+       playerStrucBonus[i].max = "4";
+      }
       break;
     case "Structures in a Row":
-       playerOneStrucBonus.max = "4";
-       playerTwoStrucBonus.max = "4";
-       playerThreeStrucBonus.max = "4";
-       playerFourStrucBonus.max = "4";
-       playerFiveStrucBonus.max = "4";
-       playerSixStrucBonus.max = "4";
-       playerSevenStrucBonus.max = "4";
+      for (var i=0; i < playerStrucBonus.length; i++) {
+       playerStrucBonus[i].max = "4";
+      }
       break;
     case "Structures on Farms or Tundra":
-       playerOneStrucBonus.max = "4";
-       playerTwoStrucBonus.max = "4";
-       playerThreeStrucBonus.max = "4";
-       playerFourStrucBonus.max = "4";
-       playerFiveStrucBonus.max = "4";
-       playerSixStrucBonus.max = "4";
-       playerSevenStrucBonus.max = "4";
+      for (var i=0; i < playerStrucBonus.length; i++) {
+       playerStrucBonus[i].max = "4";
+      }
       break;
   }
 });
@@ -11879,7 +11817,7 @@ addPlayerButton.addEventListener('click', function() {
       addPlayer();
       //playerNames[0].innerHTML = players[0].name;
       blankState.style.display = "none";
-      playerOneFactionImage.src = "assets/icons/" + players[0].faction.toLowerCase() + "_icon.png"; 
+      playerFactionImage[0].src = "assets/icons/" + players[0].faction.toLowerCase() + "_icon.png"; 
       playerText[0].innerText = "Faction: " + players[0].faction;
       playerMatText[0].innerText = "Player mat: " + players[0].mat;
       playerSections[0].style.display = "block";
@@ -11887,7 +11825,7 @@ addPlayerButton.addEventListener('click', function() {
     case 2:
       addPlayer();
       //playerNames[1].innerHTML = players[1].name;
-      playerTwoFactionImage.src = "assets/icons/" + players[1].faction.toLowerCase() + "_icon.png";
+      playerFactionImage[1].src = "assets/icons/" + players[1].faction.toLowerCase() + "_icon.png";
       playerText[1].innerText = "Faction: " + players[1].faction;
       playerMatText[1].innerText = "Player mat: " + players[1].mat;
       playerSections[1].style.display = "block";
@@ -11896,7 +11834,7 @@ addPlayerButton.addEventListener('click', function() {
     case 3:
       addPlayer();
       //playerNames[2].innerHTML = players[2].name;
-      playerThreeFactionImage.src = "assets/icons/" + players[2].faction.toLowerCase() + "_icon.png"; 
+      playerFactionImage[2].src = "assets/icons/" + players[2].faction.toLowerCase() + "_icon.png"; 
       playerText[2].innerText = "Faction: " + players[2].faction;
       playerMatText[2].innerText = "Player mat: " + players[2].mat;
       playerSections[2].style.display = "block";
@@ -11904,7 +11842,7 @@ addPlayerButton.addEventListener('click', function() {
     case 4:
       addPlayer();
       //playerNames[3].innerHTML = players[3].name;
-      playerFourFactionImage.src = "assets/icons/" + players[3].faction.toLowerCase() + "_icon.png"; 
+      playerFactionImage[3].src = "assets/icons/" + players[3].faction.toLowerCase() + "_icon.png"; 
       playerText[3].innerText = "Faction: " + players[3].faction;
       playerMatText[3].innerText = "Player mat: " + players[3].mat;
       playerSections[3].style.display = "block";
@@ -11912,7 +11850,7 @@ addPlayerButton.addEventListener('click', function() {
     case 5:
       addPlayer();
       //playerNames[4].innerHTML = players[4].name;
-      playerFiveFactionImage.src = "assets/icons/" + players[4].faction.toLowerCase() + "_icon.png"; 
+      playerFactionImage[4].src = "assets/icons/" + players[4].faction.toLowerCase() + "_icon.png"; 
       playerText[4].innerText = "Faction: " + players[4].faction;
       playerMatText[4].innerText = "Player mat: " + players[4].mat;
       playerSections[4].style.display = "block";
@@ -11962,7 +11900,6 @@ playerPopularity[6].addEventListener('input', function() {
 
 playerStars[0].addEventListener('input', function() {
   players[0].stars = playerStars[0].value;
-  console.log(players[0]);
   updateStars(players[0]);
 });
 
@@ -12035,140 +11972,126 @@ playerTerritories[6].addEventListener('input', function () {
 
 //Update Player Resources
 
-playerOneResources.addEventListener('input', function () {
-  let newPlayerResources = playerOneResources.value;
-  players[0].resources = newPlayerResources;
+playerResources[0].addEventListener('input', function () {
+  players[0].resources = playerResources[0].value;
   updateResources(players[0]);
 });
 
-playerTwoResources.addEventListener('input', function () {
-  let newPlayerResources = playerTwoResources.value;
-  players[1].resources = newPlayerResources;
+playerResources[1].addEventListener('input', function () {
+  players[1].resources = playerResources[1].value;
   updateResources(players[1]);
 });
 
-playerThreeResources.addEventListener('input', function () {
-  let newPlayerResources = playerThreeResources.value;
-  players[2].resources = newPlayerResources;
+playerResources[2].addEventListener('input', function () {
+  players[2].resources = playerResources[2].value;
   updateResources(players[2]);
 });
 
-playerFourResources.addEventListener('input', function () {
-  let newPlayerResources = playerFourResources.value;
-  players[3].resources = newPlayerResources;
+playerResources[3].addEventListener('input', function () {
+  players[3].resources = playerResources[3].value;
   updateResources(players[3]);
 });
 
-playerFiveResources.addEventListener('input', function () {
-  let newPlayerResources = playerFiveResources.value;
-  players[4].resources = newPlayerResources;
+playerResources[4].addEventListener('input', function () {
+  players[4].resources = playerResources[4].value;
   updateResources(players[4]);
 });
 
-playerSixResources.addEventListener('input', function () {
-  let newPlayerResources = playerSixResources.value;
-  players[5].resources = newPlayerResources;
+playerResources[5].addEventListener('input', function () {
+  players[5].resources = playerResources[5].value;
   updateResources(players[5]);
 });
 
-playerSevenResources.addEventListener('input', function () {
-  let newPlayerResources = playerSevenResources.value;
-  players[6].resources = newPlayerResources;
+playerResources[6].addEventListener('input', function () {
+  players[6].resources = playerResources[6].value;
   updateResources(players[6]);
 });
 
 //Update Player Money
 
-playerOneMoney.addEventListener('input', function() {
-  let newPlayerMoney = playerOneMoney.value;
-  players[0].money = newPlayerMoney;
+playerMoney[0].addEventListener('input', function() {
+  players[0].money = playerMoney[0].value;
   let playerMoneyScoreDiv = document.getElementById("player-1-money-score");
-  playerMoneyScoreDiv.innerHTML = newPlayerMoney;
+  playerMoneyScoreDiv.innerHTML = playerMoney[0].value;
   calculateTotalScore(players[0]);
 });
 
-playerTwoMoney.addEventListener('input', function() {
-  let newPlayerMoney = playerTwoMoney.value;
-  players[1].money = newPlayerMoney;
+playerMoney[1].addEventListener('input', function() {
+  players[1].money = playerMoney[1].value;
   let playerMoneyScoreDiv = document.getElementById("player-2-money-score");
-  playerMoneyScoreDiv.innerHTML = newPlayerMoney;
+  playerMoneyScoreDiv.innerHTML = playerMoney[1].value;
   calculateTotalScore(players[1]);
 });
 
-playerThreeMoney.addEventListener('input', function() {
-  let newPlayerMoney = playerThreeMoney.value;
-  players[2].money = newPlayerMoney;
+playerMoney[2].addEventListener('input', function() {
+  players[2].money = playerMoney[2].value;
   let playerMoneyScoreDiv = document.getElementById("player-3-money-score");
-  playerMoneyScoreDiv.innerHTML = newPlayerMoney;
+  playerMoneyScoreDiv.innerHTML = playerMoney[2].value;
   calculateTotalScore(players[2]);
 });
 
-playerFourMoney.addEventListener('input', function() {
-  let newPlayerMoney = playerFourMoney.value;
-  players[3].money = newPlayerMoney;
+playerMoney[3].addEventListener('input', function() {
+  players[3].money = playerMoney[3].value;
   let playerMoneyScoreDiv = document.getElementById("player-4-money-score");
-  playerMoneyScoreDiv.innerHTML = newPlayerMoney;
+  playerMoneyScoreDiv.innerHTML = playerMoney[3].value;
   calculateTotalScore(players[3]);
 });
 
-playerFiveMoney.addEventListener('input', function() {
-  let newPlayerMoney = playerFiveMoney.value;
-  players[4].money = newPlayerMoney;
+playerMoney[4].addEventListener('input', function() {
+  players[4].money = playerMoney[4].value;
   let playerMoneyScoreDiv = document.getElementById("player-5-money-score");
-  playerMoneyScoreDiv.innerHTML = newPlayerMoney;
+  playerMoneyScoreDiv.innerHTML = playerMoney[4].value;
   calculateTotalScore(players[4]);
 });
 
-playerSixMoney.addEventListener('input', function() {
-  let newPlayerMoney = playerSixMoney.value;
-  players[5].money = newPlayerMoney;
+playerMoney[5].addEventListener('input', function() {
+  players[5].money = playerMoney[5].value;
   let playerMoneyScoreDiv = document.getElementById("player-6-money-score");
-  playerMoneyScoreDiv.innerHTML = newPlayerMoney;
+  playerMoneyScoreDiv.innerHTML = playerMoney[5].value;
   calculateTotalScore(players[5]);
 });
 
-playerSevenMoney.addEventListener('input', function() {
-  let newPlayerMoney = playerSevenMoney.value;
-  players[6].money = newPlayerMoney;
+playerMoney[6].addEventListener('input', function() {
+  players[6].money = playerMoney[6].value;
   let playerMoneyScoreDiv = document.getElementById("player-7-money-score");
-  playerMoneyScoreDiv.innerHTML = newPlayerMoney;
+  playerMoneyScoreDiv.innerHTML = playerMoney[6].value;
   calculateTotalScore(players[6]);
 });
 
 //Update Player Structure Bonus
 
-playerOneStrucBonus.addEventListener('input', function() {
-  let numberOfStructures = playerOneStrucBonus.value; 
+playerStrucBonus[0].addEventListener('input', function() {
+  let numberOfStructures = playerStrucBonus[0].value; 
   updateStructureBonus(players[0], structureBonus, numberOfStructures);
 });
 
-playerTwoStrucBonus.addEventListener('input', function() {
-  let numberOfStructures = playerTwoStrucBonus.value; 
+playerStrucBonus[1].addEventListener('input', function() {
+  let numberOfStructures = playerStrucBonus[1].value; 
   updateStructureBonus(players[1], structureBonus, numberOfStructures);
 });
 
-playerThreeStrucBonus.addEventListener('input', function() {
-  let numberOfStructures = playerThreeStrucBonus.value; 
+playerStrucBonus[2].addEventListener('input', function() {
+  let numberOfStructures = playerStrucBonus[2].value; 
   updateStructureBonus(players[2], structureBonus, numberOfStructures);
 });
 
-playerFourStrucBonus.addEventListener('input', function() {
-  let numberOfStructures = playerFourStrucBonus.value; 
+playerStrucBonus[3].addEventListener('input', function() {
+  let numberOfStructures = playerStrucBonus[3].value; 
   updateStructureBonus(players[3], structureBonus, numberOfStructures);
 });
 
-playerFiveStrucBonus.addEventListener('input', function() {
-  let numberOfStructures = playerFiveStrucBonus.value; 
+playerStrucBonus[4].addEventListener('input', function() {
+  let numberOfStructures = playerStrucBonus[4].value; 
   updateStructureBonus(players[4], structureBonus, numberOfStructures);
 });
 
-playerSixStrucBonus.addEventListener('input', function() {
-  let numberOfStructures = playerSixStrucBonus.value; 
+playerStrucBonus[5].addEventListener('input', function() {
+  let numberOfStructures = playerStrucBonus[5].value; 
   updateStructureBonus(players[5], structureBonus, numberOfStructures);
 });
 
-playerSevenStrucBonus.addEventListener('input', function() {
-  let numberOfStructures = playerSevenStrucBonus.value; 
+playerStrucBonus[6].addEventListener('input', function() {
+  let numberOfStructures = playerStrucBonus[6].value; 
   updateStructureBonus(players[6], structureBonus, numberOfStructures);
 });
 

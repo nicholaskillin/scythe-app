@@ -10,7 +10,7 @@
         <div class="col player mx-2 bg-light player-section" id="player-<%= i %>">
           <h3 class="player-name" id="player-<%= i %>-name">Player <%= i %></h3>
           <hr>
-          <img id="player-<%= i %>-faction-image" class="faction-icon">
+          <img class="faction-icon">
           <p class="player-text"></p>
           <p class="player-mat"></p>
           <div id="game-started-<%= i %>" class="game-started">
@@ -53,7 +53,7 @@
                 <img src="<%= asset_path('icons/resources.png') %>">
               </div>
               <div class="col">
-                <input id="player-<%= i %>-resources" type="number" name="resources" value= 0 class="score-input" min="0">
+                <input type="number" name="resources" value= 0 class="player-resources score-input" min="0">
               </div>
               <div class="col">
                 <p id="player-<%= i %>-resources-score">0</p>
@@ -64,7 +64,7 @@
                 <img src="<%= asset_path('icons/money.png') %>">
               </div>
               <div class="col">
-                <input id="player-<%= i %>-money" type="number" name="money" value= 0 class="score-input" min="0">
+                <input type="number" name="money" value= 0 class="player-money score-input" min="0">
               </div>
               <div class="col">
                 <p id="player-<%= i %>-money-score">0</p>
@@ -75,7 +75,7 @@
                 <img src="<%= asset_path('icons/structure_bonus.png')%>">
               </div>
               <div class="col">
-                <input id="player-<%= i %>-strucBonus" type="number" name="strucBonus" value= 0 class="score-input" min="0">
+                <input type="number" name="strucBonus" value= 0 class="player-structure-bonus score-input" min="0">
               </div>
               <div class="col">
                 <p id="player-<%= i %>-strucBonus-score">0</p>
