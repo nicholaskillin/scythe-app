@@ -11866,234 +11866,60 @@ startGameButton.addEventListener('click', function() {
   }
 });
 
-// Update Player Popularity
+// Player Popularity Event Listeners
 
-playerPopularity[0].addEventListener('input', function() {
-  updatePopularity(players[0]);
-});
+for ( let i=0; i < playerPopularity.length; i++) {
+  playerPopularity[i].addEventListener('input', function() {
+    updatePopularity(players[i]);
+  });
+}
 
-playerPopularity[1].addEventListener('input', function() {
-  updatePopularity(players[1]);
-});
+// Player Stars Event Listeners
 
-playerPopularity[2].addEventListener('input', function() {
-  updatePopularity(players[2]);
-});
+for ( let i=0; i < playerStars.length; i++) {
+  playerStars[i].addEventListener('input', function() {
+    players[i].stars = playerStars[i].value;
+    updateStars(players[i]);
+  });
+}
 
-playerPopularity[3].addEventListener('input', function() {
-  updatePopularity(players[3]);
-});
+// Player Territory Event Listeners
 
-playerPopularity[4].addEventListener('input', function() {
-  updatePopularity(players[4]);
-});
+for ( let i=0; i < playerTerritories.length; i++) {
+  playerTerritories[i].addEventListener('input', function() {
+    players[i].territory = playerTerritories[i].value;
+    updateTerrirories(players[i]);
+  });
+}
 
-playerPopularity[5].addEventListener('input', function() {
-  updatePopularity(players[5]);
-});
+// Player Resources Event Listeners
 
-playerPopularity[6].addEventListener('input', function() {
-  updatePopularity(players[6]);
-});
+for ( let i=0; i < playerResources.length; i++) {
+  playerResources[i].addEventListener('input', function() {
+    players[i].resources = playerResources[i].value;
+    updateResources(players[i]);
+  });
+}
 
-// Update Player Stars
+// Player Money Event Listeners
 
-playerStars[0].addEventListener('input', function() {
-  players[0].stars = playerStars[0].value;
-  updateStars(players[0]);
-});
+for ( let i=0; i < playerMoney.length; i++) {
+  playerMoney[i].addEventListener('input', function() {
+    players[i].money = playerMoney[i].value;
+    let playerMoneyScoreDiv = document.getElementById("player-" + (i +1) + "-money-score");
+    playerMoneyScoreDiv.innerHTML = playerMoney[i].value;
+    calculateTotalScore(players[i]);
+  });
+}
 
-playerStars[1].addEventListener('input', function() {
-  players[1].stars = playerStars[1].value;
-  updateStars(players[1]);
-});
+// Player Structure Bonus Event Listeners
 
-playerStars[2].addEventListener('input', function() {
-  players[2].stars = playerStars[2].value;
-  updateStars(players[2]);
-});
-
-playerStars[3].addEventListener('input', function() {
-  players[3].stars = playerStars[3].value;
-  updateStars(players[3]);
-});
-
-playerStars[4].addEventListener('input', function() {
-  players[4].stars = playerStars[4].value;
-  updateStars(players[4]);
-});
-
-playerStars[5].addEventListener('input', function() {
-  players[5].stars = playerStars[5].value;
-  updateStars(players[5]);
-});
-
-playerStars[6].addEventListener('input', function() {
-  players[6].stars = playerStars[6].value;
-  updateStars(players[6]);
-});
-
-//Update Player Territory
-
-playerTerritories[0].addEventListener('input', function () {
-  players[0].territory = playerTerritories[0].value;
-  updateTerrirories(players[0]);
-});
-
-playerTerritories[1].addEventListener('input', function () {
-  players[1].territory = playerTerritories[1].value;
-  updateTerrirories(players[1]);
-});
-
-playerTerritories[2].addEventListener('input', function () {
-  players[2].territory = playerTerritories[2].value;
-  updateTerrirories(players[2]);
-});
-
-playerTerritories[3].addEventListener('input', function () {
-  players[3].territory = playerTerritories[3].value;
-  updateTerrirories(players[3]);
-});
-
-playerTerritories[4].addEventListener('input', function () {
-  players[4].territory = playerTerritories[4].value;
-  updateTerrirories(players[4]);
-});
-
-playerTerritories[5].addEventListener('input', function () {
-  players[5].territory = playerTerritories[5].value;
-  updateTerrirories(players[5]);
-});
-
-playerTerritories[6].addEventListener('input', function () {
-  players[6].territory = playerTerritories[6].value;
-  updateTerrirories(players[6]);
-});
-
-//Update Player Resources
-
-playerResources[0].addEventListener('input', function () {
-  players[0].resources = playerResources[0].value;
-  updateResources(players[0]);
-});
-
-playerResources[1].addEventListener('input', function () {
-  players[1].resources = playerResources[1].value;
-  updateResources(players[1]);
-});
-
-playerResources[2].addEventListener('input', function () {
-  players[2].resources = playerResources[2].value;
-  updateResources(players[2]);
-});
-
-playerResources[3].addEventListener('input', function () {
-  players[3].resources = playerResources[3].value;
-  updateResources(players[3]);
-});
-
-playerResources[4].addEventListener('input', function () {
-  players[4].resources = playerResources[4].value;
-  updateResources(players[4]);
-});
-
-playerResources[5].addEventListener('input', function () {
-  players[5].resources = playerResources[5].value;
-  updateResources(players[5]);
-});
-
-playerResources[6].addEventListener('input', function () {
-  players[6].resources = playerResources[6].value;
-  updateResources(players[6]);
-});
-
-//Update Player Money
-
-playerMoney[0].addEventListener('input', function() {
-  players[0].money = playerMoney[0].value;
-  let playerMoneyScoreDiv = document.getElementById("player-1-money-score");
-  playerMoneyScoreDiv.innerHTML = playerMoney[0].value;
-  calculateTotalScore(players[0]);
-});
-
-playerMoney[1].addEventListener('input', function() {
-  players[1].money = playerMoney[1].value;
-  let playerMoneyScoreDiv = document.getElementById("player-2-money-score");
-  playerMoneyScoreDiv.innerHTML = playerMoney[1].value;
-  calculateTotalScore(players[1]);
-});
-
-playerMoney[2].addEventListener('input', function() {
-  players[2].money = playerMoney[2].value;
-  let playerMoneyScoreDiv = document.getElementById("player-3-money-score");
-  playerMoneyScoreDiv.innerHTML = playerMoney[2].value;
-  calculateTotalScore(players[2]);
-});
-
-playerMoney[3].addEventListener('input', function() {
-  players[3].money = playerMoney[3].value;
-  let playerMoneyScoreDiv = document.getElementById("player-4-money-score");
-  playerMoneyScoreDiv.innerHTML = playerMoney[3].value;
-  calculateTotalScore(players[3]);
-});
-
-playerMoney[4].addEventListener('input', function() {
-  players[4].money = playerMoney[4].value;
-  let playerMoneyScoreDiv = document.getElementById("player-5-money-score");
-  playerMoneyScoreDiv.innerHTML = playerMoney[4].value;
-  calculateTotalScore(players[4]);
-});
-
-playerMoney[5].addEventListener('input', function() {
-  players[5].money = playerMoney[5].value;
-  let playerMoneyScoreDiv = document.getElementById("player-6-money-score");
-  playerMoneyScoreDiv.innerHTML = playerMoney[5].value;
-  calculateTotalScore(players[5]);
-});
-
-playerMoney[6].addEventListener('input', function() {
-  players[6].money = playerMoney[6].value;
-  let playerMoneyScoreDiv = document.getElementById("player-7-money-score");
-  playerMoneyScoreDiv.innerHTML = playerMoney[6].value;
-  calculateTotalScore(players[6]);
-});
-
-//Update Player Structure Bonus
-
-playerStrucBonus[0].addEventListener('input', function() {
-  let numberOfStructures = playerStrucBonus[0].value; 
-  updateStructureBonus(players[0], structureBonus, numberOfStructures);
-});
-
-playerStrucBonus[1].addEventListener('input', function() {
-  let numberOfStructures = playerStrucBonus[1].value; 
-  updateStructureBonus(players[1], structureBonus, numberOfStructures);
-});
-
-playerStrucBonus[2].addEventListener('input', function() {
-  let numberOfStructures = playerStrucBonus[2].value; 
-  updateStructureBonus(players[2], structureBonus, numberOfStructures);
-});
-
-playerStrucBonus[3].addEventListener('input', function() {
-  let numberOfStructures = playerStrucBonus[3].value; 
-  updateStructureBonus(players[3], structureBonus, numberOfStructures);
-});
-
-playerStrucBonus[4].addEventListener('input', function() {
-  let numberOfStructures = playerStrucBonus[4].value; 
-  updateStructureBonus(players[4], structureBonus, numberOfStructures);
-});
-
-playerStrucBonus[5].addEventListener('input', function() {
-  let numberOfStructures = playerStrucBonus[5].value; 
-  updateStructureBonus(players[5], structureBonus, numberOfStructures);
-});
-
-playerStrucBonus[6].addEventListener('input', function() {
-  let numberOfStructures = playerStrucBonus[6].value; 
-  updateStructureBonus(players[6], structureBonus, numberOfStructures);
-});
+for ( let i=0; i < playerStrucBonus.length; i++) {
+  playerStrucBonus[i].addEventListener('input', function() {
+    let numberOfStructures = playerStrucBonus[i].value;
+    updateStructureBonus(players[i], structureBonus, numberOfStructures);
+  });
+}
 
 };
 (function() {
