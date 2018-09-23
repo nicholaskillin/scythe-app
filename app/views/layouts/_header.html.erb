@@ -1,6 +1,13 @@
 <header>
     <navbar class="navbar navbar-expand-lg navbar-dark bg-dark">
       <%= link_to "Scythe Score Keeper", '#', class: "navbar-brand mr-auto" %>
+      <div>
+        <select id="invaders-dropdown" class= "invaders-dropdown">
+        <option value="None">Invaders?</option>
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+      </div>
       <select id="strucBonus-dropdown">
         <option value="none">Select a Structure Bonus Card</option>
         <option value="Tunnels Adjacent">Tunnels Adjacent</option>

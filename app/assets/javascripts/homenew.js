@@ -7,6 +7,7 @@ window.onload = function () {
   let addPlayerButton = document.getElementById("add-player-button");
   let startGameButton = document.getElementById("start-game-button");
   let structureBonusCard = document.getElementById("strucBonus-dropdown");
+  let invadersDropdown = document.getElementById("invaders-dropdown");
   let blankState = document.getElementById("blankstate");
   let invaders = false;
   let gameStarted = false;
@@ -29,13 +30,9 @@ window.onload = function () {
 //Set arrays
 let factions = ["Nordic", "Saxony", "Polania", "Crimea", "Rusviet"];
 let playerMats = ["Mechanical", "Patriotic", "Agricultural", "Industrial", "Engineering"];
-if (invaders) {
-  factions.push("Albion", "Togawa");
-  playerMats.push("Militant", "Innovative");
-}
 randomizeArray(factions);
 randomizeArray(playerMats);
-let players = [];
+let players = (resetPlayers());
 
 //Set functions
 function addPlayer(){
@@ -54,6 +51,11 @@ function addPlayer(){
     controlsFactory: false
   };
   players.push(newPlayer);
+}
+
+function resetPlayers() {
+    let players = [];
+    return players;
 }
 
 function randomizeArray(array) {
@@ -213,7 +215,36 @@ function calculateTotalScore(player) {
   totalPlayerScoreDiv.innerHTML = totalPlayerScore;
 }
 
+function resetGame(players) {
+  for (var i=0; i < playerSections.length; i++) {
+    playerSections[i].style.display = "none";
+  }
+  blankState.style.display = "block";
+  location.reload(true);
+}
+
 //Button event listeners
+
+invadersDropdown.addEventListener('change', function() {
+  if (invadersDropdown.value == "Yes") {
+    invaders = true;
+    factions.push("Albion", "Togawa");
+    playerMats.push("Militant", "Innovative");
+    randomizeArray(factions);
+    randomizeArray(playerMats);
+  } else {
+    let reset = confirm("This will reset the game. Continue?");
+    if (reset == true) {
+      invaders = false;
+      let albionIndex = factions.indexOf('Albion');
+      factions.splice(albionIndex, 1);
+      let togawaIndex = factions.indexOf('Togawa');
+      factions.splice(togawaIndex, 1);
+      resetGame(players);
+    }
+  }
+});
+
 structureBonusCard.addEventListener('change', function() {
   structureBonus = structureBonusCard.value;
   switch (structureBonusCard.value) {
@@ -293,6 +324,25 @@ addPlayerButton.addEventListener('click', function() {
       playerText[4].innerText = "Faction: " + players[4].faction;
       playerMatText[4].innerText = "Player mat: " + players[4].mat;
       playerSections[4].style.display = "block";
+      if (invaders == false) {
+        addPlayerButton.style.display = 'none';
+      }
+      break;
+    case 6:
+      addPlayer();
+      //playerNames[5].innerHTML = players[4].name;
+      playerFactionImage[5].src = "assets/icons/" + players[5].faction.toLowerCase() + "_icon.png"; 
+      playerText[5].innerText = "Faction: " + players[5].faction;
+      playerMatText[5].innerText = "Player mat: " + players[5].mat;
+      playerSections[5].style.display = "block";
+      break;
+    case 7:
+      addPlayer();
+      //playerNames[6].innerHTML = players[4].name;
+      playerFactionImage[6].src = "assets/icons/" + players[6].faction.toLowerCase() + "_icon.png"; 
+      playerText[6].innerText = "Faction: " + players[6].faction;
+      playerMatText[6].innerText = "Player mat: " + players[6].mat;
+      playerSections[6].style.display = "block";
       addPlayerButton.style.display = 'none';
       break;
   }
