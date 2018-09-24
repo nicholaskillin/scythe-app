@@ -8780,30 +8780,47 @@ button.close {
   }
 }
 /* universal styles */
-/* line 5, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+/* line 6, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
 body {
   min-width: 408px;
+  /* background-color: #304040; */
+  background: url(background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-/* line 9, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+/* line 17, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
 center {
   text-align: center;
 }
 
+/* line 21, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+.page-footer {
+  color: #eeeeee;
+}
+
 /* navbar */
-/* line 15, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+/* line 26, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
 .invaders-dropdown {
   margin-right: 3px;
 }
 
 /* typography */
-/* line 21, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+/* line 32, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
 h2 {
   text-align: center;
 }
 
 /* player area */
-/* line 26, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+/* line 37, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+.player-section {
+  background-color: #eeeeee;
+  border-radius: 6px;
+}
+
+/* line 42, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
 .player {
   text-align: center;
   max-width: 400px;
@@ -8811,23 +8828,23 @@ h2 {
   min-width: 188px;
 }
 
-/* line 33, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+/* line 49, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
 img {
   width: 50px;
   height: 50px;
 }
 
-/* line 38, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+/* line 54, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
 .game-started {
   display: none;
 }
 
-/* line 42, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+/* line 58, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
 .score-input {
   max-width: 35px;
 }
 
-/* line 46, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
+/* line 62, /home/ec2-user/environment/scythe/app/assets/stylesheets/custom.scss */
 .faction-icon {
   width: 100px;
   height: 100px;
