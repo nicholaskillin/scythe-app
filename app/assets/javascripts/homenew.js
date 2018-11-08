@@ -4,14 +4,14 @@
 window.onload = function () {
   
   //Get non-player elements
-  var addPlayerButton = document.getElementById("add-player-button");
-  var startGameButton = document.getElementById("start-game-button");
-  var structureBonusCard = document.getElementById("strucBonus-dropdown");
-  var invadersDropdown = document.getElementById("invaders-dropdown");
-  var blankState = document.getElementById("blankstate");
-  var invaders = false;
-  var gameStarted = false;
-  var structureBonus = "none";
+  let addPlayerButton = document.getElementById("add-player-button");
+  let startGameButton = document.getElementById("start-game-button");
+  let structureBonusCard = document.getElementById("strucBonus-dropdown");
+  let invadersDropdown = document.getElementById("invaders-dropdown");
+  let blankState = document.getElementById("blankstate");
+  let invaders = false;
+  let gameStarted = false;
+  let structureBonus = "none";
   
 //Get player elements  
   let playerStats = $(".game-started");
