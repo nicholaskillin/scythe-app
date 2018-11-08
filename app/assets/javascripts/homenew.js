@@ -4,7 +4,7 @@
 window.onload = function () {
   
   //Get non-player elements
-  let addPlayerButton = document.getElementById("add-player-button");
+  var addPlayerButton = document.getElementById("add-player-button");
   let startGameButton = document.getElementById("start-game-button");
   let structureBonusCard = document.getElementById("strucBonus-dropdown");
   let invadersDropdown = document.getElementById("invaders-dropdown");
