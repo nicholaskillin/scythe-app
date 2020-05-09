@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'actionview',   '>= 5.2.4.2'
 gem 'rails'
 gem 'bootstrap-sass','3.4.1'
 gem 'puma',         '4.3.3'
