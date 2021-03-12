@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.7.0'
+
 gem 'actionview',   '>= 5.2.4.2'
 gem 'rails'
 gem 'bootstrap-sass','3.4.1'
